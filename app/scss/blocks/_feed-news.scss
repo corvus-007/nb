@@ -1,0 +1,30 @@
+.feed-news {
+
+}
+
+.feed-news__list {
+  @include clear-list();
+}
+
+.feed-news__item {
+  margin-bottom: 1rem;
+}
+
+.feed-news__item-link {
+  display: flex;
+  align-items: baseline;
+  flex-shrink: 0;
+  color: $black-color;
+}
+
+.feed-news__item-time {
+  margin-right: rem($grid-gutter-width / 2);
+  font-size: rem(14);
+  color: $accent-color;
+}
+
+.feed-news__item-title {
+  margin: 0;
+  font-size: rem(16);
+  line-height: normal;
+}

@@ -1,0 +1,136 @@
+.multimedia-news {
+
+}
+
+.multimedia-news__list {
+  @include clear-list();
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mq-min(1280px) {
+    margin-bottom: rem(-$grid-gutter-width);
+  }
+}
+
+.multimedia-news__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: rem($grid-gutter-width);
+
+  @include mq-min(1280px) {
+    width: calc((100% - 3 * #{rem($grid-gutter-width)}) / 4);
+    margin-right: rem($grid-gutter-width);
+
+    &:first-child {
+      width: calc(50% - #{rem($grid-gutter-width / 2)});
+    }
+
+    &:nth-child(2) {
+      width: calc((50% - #{rem($grid-gutter-width / 2)} - 1 * #{rem($grid-gutter-width)}) / 2);
+    }
+
+    &:nth-child(3) {
+      width: calc((50% - #{rem($grid-gutter-width / 2)} - 1 * #{rem($grid-gutter-width)}) / 2);
+      margin-right: 0;
+    }
+
+    &:nth-child(4n+7) {
+      margin-right: 0;
+    }
+  }
+}
+
+.multimedia-news__item-link {
+  flex-grow: 1;
+  position: relative;
+  display: block;
+  color: $white-color;
+
+  &:hover,
+  &:focus {
+    color: $white-color;
+  }
+}
+
+.multimedia-news__item:first-child .multimedia-news__item-link {
+    &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.5;
+    background-image: linear-gradient(to top, $black-color, rgba($black-color, 0));
+  }
+}
+
+.multimedia-news__item-image-wrapper {
+  @include make-fit-object(282, 150);
+
+  @include mq-min(1280px) {
+
+  }
+}
+
+.multimedia-news__item:first-child .multimedia-news__item-image-wrapper {
+  @include make-fit-object(594, 300);
+}
+
+.multimedia-news__item-image {
+  transition: transform ($duration * 7);
+  will-change: transform;
+}
+
+.multimedia-news__item-link:hover .multimedia-news__item-image,
+.multimedia-news__item-link:focus .multimedia-news__item-image,
+.multimedia-news__item:first-child .multimedia-news__item-link:hover .multimedia-news__item-image,
+.multimedia-news__item:first-child .multimedia-news__item-link:focus .multimedia-news__item-image {
+  transform: translateX(-50%) translateY(-50%) scale(1.2); // translateX, translateY задается у миксина make-fit-object
+
+  @supports (object-fit: cover) {
+    transform: scale(1.2);
+  }
+}
+
+.multimedia-news__item-body {
+  padding-top: 0.5rem;
+}
+
+.multimedia-news__item:first-child .multimedia-news__item-body {
+  position: absolute;
+  left: rem($grid-gutter-width / 2);
+  right: rem($grid-gutter-width / 2);
+  bottom: rem($grid-gutter-width / 2);
+  z-index: 3;
+
+  @include mq-min(1280px) {
+
+  }
+}
+
+.multimedia-news__item-time {
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+.multimedia-news__item:first-child .multimedia-news__item-time {
+  display: none;
+}
+
+.multimedia-news__item-title {
+  margin: 0;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+  font-size: rem(18);
+  line-height: normal;
+}
+
+.multimedia-news__item:first-child .multimedia-news__item-title {
+  font-size: rem(30);
+  font-weight: 800;
+}

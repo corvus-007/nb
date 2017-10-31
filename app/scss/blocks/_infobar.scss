@@ -1,0 +1,29 @@
+.infobar {
+
+}
+
+.infobar__list {
+  @include clear-list();
+
+  display: flex;
+  align-items: baseline;
+}
+
+.infobar__item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1.5rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.infobar__icon {
+  background-color: currentColor;
+  margin-right: 0.5rem;
+}
+
+.infobar__value {
+
+}

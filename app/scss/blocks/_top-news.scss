@@ -1,0 +1,106 @@
+.top-news {
+
+}
+
+.top-news__list {
+  @include clear-list();
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mq-min(1280px) {
+    margin-bottom: rem($grid-gutter-width / -2);
+  }
+}
+
+.top-news__item {
+  position: relative;
+  width: 100%;
+  margin-bottom: rem($grid-gutter-width / 2);
+  line-height: 1.3;
+
+  &:first-child {
+    @include make-fit-object(650, 300);
+  }
+
+  &:nth-child(n+2) {
+    @include make-fit-object(317, 175);
+  }
+
+  @include mq-min(1280px) {
+    width: calc((100% - #{rem($grid-gutter-width / 2)}) / 2);
+    margin-right: rem($grid-gutter-width / 2);
+
+    &:first-child {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &:nth-child(2n+3) {
+      margin-right: 0;
+    }
+  }
+}
+
+.top-news__item-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: $white-color;
+
+  &:hover,
+  &:focus {
+    color: $white-color;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.5;
+    background-image: linear-gradient(to top, $black-color, rgba($black-color, 0));
+  }
+}
+
+.top-news__item-image {
+  z-index: 1;
+  transition: transform ($duration * 7);
+  will-change: transform;
+}
+
+.top-news__item-link:hover .top-news__item-image,
+.top-news__item-link:focus .top-news__item-image {
+  transform: translateX(-50%) translateY(-50%) scale(1.2); // translateX, translateY задается у миксина make-fit-object
+
+  @supports (object-fit: cover) {
+    transform: scale(1.2);
+  }
+}
+
+.top-news__item-title {
+  position: absolute;
+  left: rem($grid-gutter-width / 2);
+  right: rem($grid-gutter-width / 2);
+  bottom: rem($grid-gutter-width / 2);
+  z-index: 3;
+  margin: 0;
+  font-weight: 800;
+  font-size: rem(18);
+}
+
+.top-news__item:first-child .top-news__item-title {
+  font-size: rem(30);
+}
+
+.top-news__item-rubric {
+  position: absolute;
+  top: rem($grid-gutter-width / 2);
+  right: rem($grid-gutter-width / 2);
+  z-index: 3;
+}

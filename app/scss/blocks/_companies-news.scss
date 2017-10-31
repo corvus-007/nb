@@ -1,0 +1,33 @@
+.companies-news {
+
+}
+
+.companies-news__list {
+  @include clear-list();
+}
+
+.companies-news__item {
+  margin-bottom: rem(20);
+}
+
+.companies-news__item-link {
+  display: block;
+  background-color: $secondary-color;
+  color: $black-color;
+}
+
+.companies-news__item-image-wrapper {
+  @include make-fit-object(255, 160);
+}
+
+.companies-news__item-image {
+
+}
+
+.companies-news__item-title {
+  margin: 0;
+  padding: rem($grid-gutter-width / 2);
+  font-size: rem(16);
+  line-height: normal;
+  font-weight: normal;
+}

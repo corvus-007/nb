@@ -1,0 +1,16 @@
+.topbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: $white-color;
+  background-color: $black-color;
+}
+
+.topbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar__item {
+
+}

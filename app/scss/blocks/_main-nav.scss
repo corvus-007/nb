@@ -1,0 +1,20 @@
+.main-nav {
+
+}
+
+.main-nav__list {
+  @include clear-list();
+
+  display: flex;
+
+  li {
+    margin-right: calc(35 * 100vw / 1280);
+    font-weight: 700;
+    font-size: rem(16);
+    text-transform: uppercase;
+  }
+
+  a {
+    color: $black-color;
+  }
+}
