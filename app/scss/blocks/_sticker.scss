@@ -1,7 +1,11 @@
 .sticker {
-  padding: rem(5) rem(14);
+  padding-left: rem(14);
+  padding-right: rem(14);
   font-weight: 700;
+  height: 20px;
+  line-height: 20px;
   font-size: rem(12);
+  font-family: $secondary-font;
   letter-spacing: 0.1em;
   color: $white-color;
   text-transform: uppercase;

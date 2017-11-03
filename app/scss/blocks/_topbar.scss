@@ -1,11 +1,13 @@
 .topbar {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  font-family: $secondary-font;
   color: $white-color;
   background-color: $black-color;
 }
 
 .topbar__inner {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,4 +15,21 @@
 
 .topbar__item {
 
+  margin-right: 2rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--infobar {
+
+  }
+
+  &--socials {
+    margin-left: auto;
+  }
+
+  &-searchbar {
+
+  }
 }

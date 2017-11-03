@@ -1,0 +1,28 @@
+.searchbox {
+  position: relative;
+  overflow: hidden;
+}
+
+.searchbox__input {
+  padding-right: rem(50);
+  font-size: rem(14);
+}
+
+.searchbox__submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  padding-left: rem(15);
+  padding-right: rem(15);
+  background: none;
+  border: none;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.searchbox__submit-icon {
+  margin: auto;
+  background-color: #4586FF;
+}

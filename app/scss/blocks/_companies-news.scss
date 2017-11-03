@@ -12,12 +12,18 @@
 
 .companies-news__item-link {
   display: block;
-  background-color: $secondary-color;
   color: $black-color;
+  background-color: $secondary-color;
+  text-decoration: none;
+  transition: $duration;
 }
 
 .companies-news__item-image-wrapper {
   @include make-fit-object(255, 160);
+
+  &::before {
+    background-color: $secondary-color;
+  }
 }
 
 .companies-news__item-image {
@@ -27,7 +33,8 @@
 .companies-news__item-title {
   margin: 0;
   padding: rem($grid-gutter-width / 2);
+  font-weight: normal;
   font-size: rem(16);
   line-height: normal;
-  font-weight: normal;
+  font-family: $primary-font;
 }

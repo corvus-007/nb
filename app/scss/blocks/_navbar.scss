@@ -1,5 +1,15 @@
 .navbar {
   background-color: $secondary-color;
+  padding-top: rem(17);
+  padding-bottom: rem(17);
+  z-index: 20;
+  // transition: padding $duration / 2;
+  // will-change: padding;
+}
+
+.is-sticky .navbar {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .navbar__inner {
@@ -10,4 +20,11 @@
 
 .navbar__logo {
   flex-shrink: 0;
+  margin-right: rem($grid-gutter-width);
+  // transition: transform $duration;
+  // will-change: transform;
+}
+
+.is-sticky .navbar__logo {
+  transform: scale(0.7);
 }

@@ -4,6 +4,8 @@
 
 .relationships-news__list {
   @include clear-list();
+
+  margin-bottom: rem(-25);
 }
 
 .relationships-news__item {
@@ -14,6 +16,8 @@
   display: flex;
   align-items: flex-start;
   color: $black-color;
+  text-decoration: none;
+  transition: $duration;
 }
 
 .relationships-news__item-image-wrapper {
@@ -22,6 +26,10 @@
   flex-shrink: 0;
   width: rem(206);
   margin-right: rem($grid-gutter-width / 2);
+
+  &::before {
+    background-color: $secondary-color;
+  }
 }
 
 .relationships-news__item-image {
@@ -34,6 +42,7 @@
 
 .relationships-news__item-time {
   font-size: rem(15);
+  font-family: $secondary-font;
   color: $gray-147;
 }
 
@@ -42,9 +51,14 @@
   margin-bottom: 0.5rem;
   font-weight: 700;
   font-size: rem(18);
+  font-family: $primary-font;
   line-height: normal;
 }
 
 .relationships-news__item-excerpt {
+  line-height: normal;
 
+  & > :last-child {
+    margin-bottom: 0;
+  }
 }

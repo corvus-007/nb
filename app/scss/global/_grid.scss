@@ -82,9 +82,16 @@
 }
 
 @mixin make-container-fluid($gutter: $grid-gutter-width) {
-  width: calc(100% - #{$gutter * 2});
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: ($gutter / 1);
   padding-right: ($gutter / 1);
+  box-sizing: border-box;
+
+  @include mq-min(1366px) {
+    width: 1300px;
+  }
 }
 
 @mixin make-row($gutter: $grid-gutter-width) {

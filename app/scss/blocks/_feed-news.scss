@@ -15,16 +15,22 @@
   align-items: baseline;
   flex-shrink: 0;
   color: $black-color;
+  text-decoration: none;
+  transition: $duration;
 }
 
 .feed-news__item-time {
   margin-right: rem($grid-gutter-width / 2);
+  font-weight: 600;
   font-size: rem(14);
+  font-family: $secondary-font;
   color: $accent-color;
 }
 
 .feed-news__item-title {
   margin: 0;
+  font-weight: normal;
   font-size: rem(16);
   line-height: normal;
+  font-family: $primary-font;
 }

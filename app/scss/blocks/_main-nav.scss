@@ -1,5 +1,11 @@
-.main-nav {
+.main-nav-wrapper {
+  flex-grow: 1;
+  overflow: hidden;
+}
 
+.main-nav {
+  overflow: hidden;
+  margin-left: auto;
 }
 
 .main-nav__list {
@@ -8,13 +14,22 @@
   display: flex;
 
   li {
-    margin-right: calc(35 * 100vw / 1280);
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding-right: rem(35);
     font-weight: 700;
     font-size: rem(16);
+    font-family: $secondary-font;
     text-transform: uppercase;
+    white-space: nowrap;
+
+    &:last-child {
+      padding-right: 0;
+    }
   }
 
   a {
     color: $black-color;
+    text-decoration: none;
   }
 }

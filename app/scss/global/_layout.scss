@@ -9,26 +9,30 @@
 }
 
 .main-grid {
+  padding-bottom: rem(45);
   @include mq-min(1280px) {
     display: flex;
   }
 }
 
-.main-grid__column-left {
-  flex-shrink: 0;
-  width: rem(255);
-  outline: 3px solid #3F72AF;
+.main-grid__column-main {
+  @include mq-min(1280px) {
+    flex-grow: 1;
+    margin-left: rem($grid-gutter-width);
+    margin-right: rem($grid-gutter-width);
+  }
 }
 
-.main-grid__column-main {
-  flex-grow: 1;
-  margin-left: rem($grid-gutter-width);
-  margin-right: rem($grid-gutter-width);
-  outline: 3px solid #6639A6;
+.main-grid__column-left {
+  @include mq-min(1280px) {
+    flex-shrink: 0;
+    width: rem(255);
+  }
 }
 
 .main-grid__column-right {
-  flex-shrink: 0;
-  width: rem(255);
-  outline: 3px solid #A6FFF2;
+  @include mq-min(1280px) {
+    flex-shrink: 0;
+    width: rem(255);
+  }
 }

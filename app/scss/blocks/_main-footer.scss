@@ -1,0 +1,15 @@
+.main-footer {
+  padding-top: rem(35);
+  padding-bottom: rem(35);
+  font-size: rem(14);
+  color: #a7b1bb;
+  background-color: $white-color;
+
+  @include mq-max(767px) {
+    text-align: center;
+  }
+}
+
+.main-footer__inner {
+
+}

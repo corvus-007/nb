@@ -1,0 +1,12 @@
+.main-footer-informers {
+  display: flex;
+  justify-content: center;
+
+  @include mq-min(992px) {
+    justify-content: flex-end;
+  }
+}
+
+.main-footer-informers__item {
+
+}

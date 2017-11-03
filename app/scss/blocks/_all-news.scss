@@ -32,13 +32,18 @@
   flex-direction: column;
   flex-grow: 1;
   color: $black-color;
-  // outline: 1px solid #B693FE;
+  text-decoration: none;
+  transition: $duration;
 }
 
 .all-news__item-image-wrapper {
   @include make-fit-object(220, 130);
 
   margin-bottom: 0.5rem;
+
+  &::before {
+    background-color: $secondary-color;
+  }
 }
 
 .all-news__item-image {
@@ -57,9 +62,11 @@
   margin-bottom: 0.2rem;
   font-weight: 700;
   font-size: rem(16);
+  font-family: $primary-font;
   line-height: normal;
 }
 
 .all-news__item-time {
+  font-family: $secondary-font;
   color: $gray-147;
 }

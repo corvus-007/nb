@@ -1,0 +1,30 @@
+.searchbar {
+  // position: relative;
+}
+
+.searchbar__form {
+  .searchbox__input {
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+    background-color: $black-color;
+    color: $white-color;
+    border-color: $black-color;
+    font-size: rem(16);
+  }
+}
+
+.searchbar__content {
+  position: absolute;
+  top: -0.5rem;
+  bottom: 0;
+  margin-left: auto;
+  right: rem(30);
+  width: calc(100% - 2 * #{rem(30)});
+  transition: width ($duration * 2);
+  will-change: width;
+}
+
+.searchbar--closed .searchbar__content {
+  width: 0;
+  // overflow: hidden;
+}

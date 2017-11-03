@@ -117,24 +117,4 @@
 .button {
   @include make-button();
   @include --button-black();
-
-  // &--small {
-  //   @include --button-small();
-  // }
-
-  // &--large {
-  //   @include --button-large();
-  // }
 }
-
-// .button__icon {
-//   fill: currentColor;
-
-//   &:first-child {
-//     margin-right: 0.5em;
-//   }
-
-//   &:last-child {
-//     margin-left: 0.5em;
-//   }
-// }

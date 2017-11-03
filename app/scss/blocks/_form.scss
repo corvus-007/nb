@@ -19,13 +19,13 @@
 }
 
 .form-control {
-  padding: em(14, 18) em(24, 18);
+  padding: rem(11) rem(15);
   width: 100%;
   outline: none;
-  border: 1px solid transparent;
-  background: #edeef1;
+  border: 1px solid $gray-127;
+  background: $white-color;
   font: inherit;
-  font-size: rem(18);
+  font-size: rem(16);
   line-height: normal;
   box-sizing: border-box;
   transition: 0.3s;
@@ -37,11 +37,11 @@ textarea.form-control {
 }
 
 .form-control:hover {
-  background: #f9f9f9;
+  background: #fafafa;
 }
 
 .form-control:focus {
-  border-color: mix(#000, #e3e3e1, 7%);
+  border-color: mix(#000, $gray-127, 10%);
   background: #fff;
 }
 
