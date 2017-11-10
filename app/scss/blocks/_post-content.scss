@@ -1,0 +1,10 @@
+.post-content {
+  @include make-textual();
+
+  margin-bottom: 1.5rem;
+}
+
+.post-content__intro {
+  font-size: rem(24);
+  line-height: 1.2;
+}

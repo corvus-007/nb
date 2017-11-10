@@ -1,0 +1,23 @@
+.post-info {
+  display: flex;
+}
+
+.post-info__item {
+  margin-right: rem(15);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--rubric {
+
+  }
+
+  &--time {
+
+  }
+
+  &--countеrs {
+    margin-left: auto;
+  }
+}

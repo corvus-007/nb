@@ -1,0 +1,6 @@
+.multimedia-news-counters {
+  @include clear-list();
+
+  display: flex;
+  align-items: center;
+}

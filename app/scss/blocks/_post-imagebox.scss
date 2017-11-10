@@ -1,0 +1,22 @@
+.post-imagebox {
+  @include make-fit-object(935, 431);
+
+  margin-bottom: rem(30);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.5;
+    background-image: linear-gradient(to top, $black-color, rgba($black-color, 0) 70%);
+  }
+}
+
+.post-imagebox__info {
+  position: absolute;
+  z-index: 2;
+}
