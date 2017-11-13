@@ -33,10 +33,28 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     };
 
+    let onSearchBarClickOut = function(event) {
+      var parentNode = event.target;
+      var isClickOut = true;
+
+      while (parentNode) {
+        if (parentNode.classList.contains('searchbar')) {
+          isClickOut = false;
+          break;
+        }
+        parentNode = parentNode.parentElement;
+      }
+
+      if (isClickOut) {
+        hideSearchBarContent();
+      }
+    };
+
     let showSearchBarContent = function() {
       searchbar.classList.remove('searchbar--closed');
       searchbarInput.focus();
       document.addEventListener('keydown', onSearchBarEscPress);
+      document.addEventListener('click', onSearchBarClickOut);
     };
 
     let hideSearchBarContent = function() {
