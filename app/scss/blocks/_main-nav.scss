@@ -1,10 +1,11 @@
 .main-nav-wrapper {
   flex-grow: 1;
-  overflow: hidden;
 }
 
 .main-nav {
-  overflow: hidden;
+  @include clearfix();
+
+  position: relative;
   margin-left: auto;
 }
 
