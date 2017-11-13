@@ -33,7 +33,7 @@ other/
 ## Установка
 1. Перейти в родительскую папку проектов
 2. Запустить консоль Git Bash
-3. Ввести команду `git clone https://github.com/corvus-007/start-project nb`
+3. Ввести команду `git clone https://github.com/corvus-007/nb`
 4. Перейти в каталог проекта `cd nb`
 5. Установить модули из package.json — `npm install`
 
