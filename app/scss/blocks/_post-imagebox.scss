@@ -2,6 +2,7 @@
   @include make-fit-object(935, 431);
 
   margin-bottom: rem(30);
+  background-color: rgba($black-color, 0.1);
 
   &::after {
     content: "";
@@ -18,5 +19,26 @@
 
 .post-imagebox__info {
   position: absolute;
-  z-index: 2;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  padding: rem(10);
+  padding-left: rem(15);
+  font-size: rem(15);
+  color: $white-color;
+  background-color: rgba($black-color, 0.3);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: rem(20);
+    height: rem(15);
+    margin-right: 0.2rem;
+    vertical-align: middle;
+    background-color: currentColor;
+  }
+
+  a {
+    color: #00c7ff;
+  }
 }
