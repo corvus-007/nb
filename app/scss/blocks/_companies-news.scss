@@ -18,7 +18,7 @@
   transition: $duration;
 }
 
-.companies-news__item-image-wrapper {
+.companies-news__item-imagebox {
   @include make-fit-object(255, 160);
 
   &::before {

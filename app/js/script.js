@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let searchbarInput = searchbar.querySelector('.searchbox__input');
 
     let onSearchBarEscPress = function(event) {
-      console.log(event, event.keyCode);
       if (event.keyCode === KEYCODE_ESC) {
         hideSearchBarContent();
       }

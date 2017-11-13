@@ -74,7 +74,7 @@
   }
 }
 
-.multimedia-news__item-image-wrapper {
+.multimedia-news__item-imagebox {
   @include make-fit-object(282, 150);
 
   &::before {
@@ -82,7 +82,7 @@
   }
 }
 
-.multimedia-news__item:first-child .multimedia-news__item-image-wrapper {
+.multimedia-news__item:first-child .multimedia-news__item-imagebox {
   @include make-fit-object(594, 300);
 }
 

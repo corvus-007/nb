@@ -20,7 +20,7 @@
   transition: $duration;
 }
 
-.relationships-news__item-image-wrapper {
+.relationships-news__item-imagebox {
   @include make-fit-object(206, 150);
 
   flex-shrink: 0;

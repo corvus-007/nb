@@ -36,7 +36,7 @@
   transition: $duration;
 }
 
-.all-news__item-image-wrapper {
+.all-news__item-imagebox {
   @include make-fit-object(220, 130);
 
   margin-bottom: 0.5rem;
@@ -44,10 +44,6 @@
   &::before {
     background-color: $secondary-color;
   }
-}
-
-.all-news__item-image {
-
 }
 
 .all-news__item-rubric {
