@@ -18,8 +18,6 @@
 .main-grid__column-main {
   @include mq-min(1280px) {
     flex-grow: 1;
-    margin-left: rem($grid-gutter-width);
-    margin-right: rem($grid-gutter-width);
   }
 }
 
@@ -27,6 +25,7 @@
   @include mq-min(1280px) {
     flex-shrink: 0;
     width: rem(255);
+    margin-right: rem($grid-gutter-width);
   }
 }
 
@@ -34,5 +33,6 @@
   @include mq-min(1280px) {
     flex-shrink: 0;
     width: rem(255);
+    margin-left: rem($grid-gutter-width);
   }
 }
