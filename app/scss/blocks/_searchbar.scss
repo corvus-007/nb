@@ -3,13 +3,18 @@
 }
 
 .searchbar__form {
+
   .searchbox__input {
-    padding-top: rem(10);
-    padding-bottom: rem(10);
+    padding-top: rem(7);
+    padding-bottom: rem(7);
     background-color: $black-color;
     color: $white-color;
     border-color: $black-color;
     font-size: rem(16);
+  }
+
+  .searchbox__submit {
+    color: $white-color;
   }
 }
 
