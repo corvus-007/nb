@@ -10,12 +10,11 @@
   margin-right: 1.2em;
   border: none;
   transition: $duration;
-  color: $accent-color;
+  color: $white-color;
 
   &:hover,
   &:focus {
-    transform: scale(1.1);
-    color: $white-color;
+    color: $accent-color-2;
   }
 
   &:last-child {
@@ -24,7 +23,6 @@
 }
 
 .socials__icon {
-  background-color: currentColor;
-  vertical-align: middle;
+  display: block;
   fill: currentColor;
 }
