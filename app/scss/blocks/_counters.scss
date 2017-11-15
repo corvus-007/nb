@@ -19,17 +19,19 @@
 }
 
 .counters__icon {
+  width: rem(12);
+  height: rem(12);
   flex-shrink: 0;
   margin-right: 0.25rem;
-  background-color: currentColor;
-  transition: background-color ($duration * 2);
+  fill: currentColor;
+  transition: $duration;
 }
 
 .multimedia-news__item:first-child .counters__icon {
-  background-color: $accent-color;
+  fill: $accent-color;
 }
 
 .multimedia-news__item-link:hover .counters__icon,
 .multimedia-news__item-link:focus .counters__icon {
-  background-color: $accent-color;
+  fill: $accent-color;
 }
