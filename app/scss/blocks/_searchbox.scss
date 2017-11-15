@@ -24,5 +24,6 @@
 
 .searchbox__submit-icon {
   margin: auto;
-  background-color: #4586FF;
+  fill: currentColor;
+  transition: $duration;
 }
