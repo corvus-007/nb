@@ -12,7 +12,15 @@
   margin-bottom: 0.5rem;
   font-weight: 800;
   line-height: 1.2;
-  font-size: rem(45);
+  font-size: rem(30);
+
+  @include mq-min(667px) {
+    font-size: rem(35);
+  }
+
+  @include mq-min(768px) {
+    font-size: rem(45);
+  }
 }
 
 .post__footer {
