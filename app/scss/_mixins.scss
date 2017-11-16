@@ -74,7 +74,6 @@
 
   blockquote {
     margin: 0;
-    margin-left: rem(15);
     padding-top: rem(8);
     padding-bottom: rem(8);
     padding-left: rem(25);
@@ -142,6 +141,12 @@
     margin-bottom: 0;
     font-weight: 600;
     font-size: rem(15);
+  }
+
+  @include mq-min(667px) {
+    blockquote {
+      margin-left: rem(15);
+    }
   }
 
   @include mq-min(768px) {
