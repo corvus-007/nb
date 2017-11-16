@@ -9,26 +9,36 @@
 }
 
 .relationships-news__item {
-  margin-bottom: rem(25);
+  margin-bottom: rem(30);
+
+  @include mq-min(568px) {
+    margin-bottom: rem(25);
+  }
 }
 
 .relationships-news__item-link {
-  display: flex;
-  align-items: flex-start;
+  display: block;
   color: $black-color;
   text-decoration: none;
   transition: $duration;
+
+  @include mq-min(568px) {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 .relationships-news__item-imagebox {
   @include make-fit-object(206, 150);
 
-  flex-shrink: 0;
-  width: rem(206);
-  margin-right: rem($grid-gutter-width / 2);
-
   &::before {
     background-color: $secondary-color;
+  }
+
+  @include mq-min(568px) {
+    flex-shrink: 0;
+    width: rem(206);
+    margin-right: rem($grid-gutter-width / 2);
   }
 }
 
@@ -41,6 +51,7 @@
 }
 
 .relationships-news__item-time {
+
 }
 
 .relationships-news__item-title {
