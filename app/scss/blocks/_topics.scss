@@ -5,18 +5,29 @@
 .topics__list {
   @include clear-list();
 
-  display: flex;
+  @include mq-min(500px) {
+    display: flex;
+  }
 }
 
 .topics__item {
   display: flex;
   flex-direction: column;
-  width: calc((100% - 2 * #{rem($grid-gutter-width / 2)}) / 3);
-  margin-right: rem($grid-gutter-width / 2);
+  margin-bottom: rem($grid-gutter-width / 2);
   font-size: rem(15);
 
   &:last-child {
-    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  @include mq-min(500px) {
+    width: calc((100% - 2 * #{rem($grid-gutter-width / 2)}) / 3);
+    margin-right: rem($grid-gutter-width / 2);
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
