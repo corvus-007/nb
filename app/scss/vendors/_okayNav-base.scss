@@ -25,16 +25,17 @@
 .okayNav__nav--visible a {
   /* Link styling for the visible part of the nav */
   display: block;
-  padding: 15px 15px;
-  transition: color 200ms cubic-bezier(0.55, 0, 0.1, 1);
+  /*padding: 15px 15px;*/
+  /*transition: color 200ms cubic-bezier(0.55, 0, 0.1, 1);*/
 }
 .okayNav__nav--visible:empty ~ .okayNav__menu-toggle {
   top: 0;
 }
 /* Link styling for the off-screen part of the nav */
 .okayNav__nav--invisible {
+  min-width: 220px;
   position: absolute;
-  top: 100%;
+  top: calc(100% + #{rem(17)});
   right: 0;
   z-index: 3;
   margin: 0;
@@ -46,13 +47,19 @@
   visibility: hidden;
   -webkit-overflow-scrolling: touch;
   transition: all 400ms cubic-bezier(0.55, 0, 0.1, 1), visibility 0s 400ms;
-  outline: 1px solid #fc5185;
+  background-color: $secondary-color;
+  // outline: 1px solid #fc5185;
 }
+
+.is-sticky .okayNav__nav--invisible {
+  top: 100%;
+}
+
 .okayNav__nav--invisible a {
-  display: block;
-  width: 240px;
-  padding: 15px;
-  background: #fff;
+  // display: block;
+  // width: 240px;
+  // padding: 15px;
+  // background: #fff;
 }
 .okayNav__nav--invisible.transition-enabled {
   transition: all 400ms cubic-bezier(0.55, 0, 0.1, 1);
@@ -66,13 +73,15 @@
 /* Kebab icon */
 .okayNav__menu-toggle {
   position: relative;
-  z-index: 1;
   top: 15px;
-  float: right;
+  z-index: 1;
+  float: left;
   width: 40px;
-  height: 20px;
+  height: 24px;
+  margin-left: rem(35 / 2);
   cursor: pointer;
   transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  transform: rotate(90deg);
 }
 .okayNav__menu-toggle.okay-invisible {
   position: absolute;
@@ -85,12 +94,12 @@
   right: 0;
   left: 0;
   display: block;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   margin: auto;
   pointer-events: none;
   border-radius: 50%;
-  background: #2e2e33;
+  background: $base-color;
 }
 .okayNav__menu-toggle span:nth-child(1) {
   top: 0;
@@ -104,8 +113,8 @@
 }
 .okayNav__menu-toggle.icon--active {
   /* Kebab icon when off-screen nav is open */
-  transform: rotate(90deg);
+  transform: rotate(0);
 }
 .okayNav__menu-toggle.icon--active span {
-  background: #546edb;
+  background: $accent-color;
 }
