@@ -1,5 +1,9 @@
 .sidebar-module {
   margin-bottom: rem(35);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .sidebar-module__head {

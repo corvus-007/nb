@@ -9,8 +9,9 @@
     padding-bottom: rem(7);
     background-color: $black-color;
     color: $white-color;
+    font-family: $primary-font;
     border-color: $black-color;
-    font-size: rem(16);
+    font-size: rem(24);
   }
 
   .searchbox__submit {
@@ -22,11 +23,16 @@
   position: absolute;
   top: -0.5rem;
   bottom: 0;
+  right: rem(15);
+  width: calc(100% - 2 * #{rem(15)});
   margin-left: auto;
-  right: rem(30);
-  width: calc(100% - 2 * #{rem(30)});
   transition: width ($duration * 2);
   will-change: width;
+
+  @include mq-min(736px) {
+    right: rem(30);
+    width: calc(100% - 2 * #{rem(30)});
+  }
 }
 
 .searchbar--closed .searchbar__content {

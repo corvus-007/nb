@@ -27,11 +27,13 @@
   transition: $duration;
 }
 
-.multimedia-news__item:first-child .counters__icon {
-  fill: $accent-color;
-}
+@include mq-min(1280px) {
+  .multimedia-news__item:first-child .counters__icon {
+    fill: $accent-color;
+  }
 
-.multimedia-news__item-link:hover .counters__icon,
-.multimedia-news__item-link:focus .counters__icon {
-  fill: $accent-color;
+  .multimedia-news__item-link:hover .counters__icon,
+  .multimedia-news__item-link:focus .counters__icon {
+    fill: $accent-color;
+  }
 }

@@ -1,8 +1,18 @@
 .sticky-banners {
   z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
   will-change: top, bottom;
+}
 
-  .banner:not(:last-child) {
-    margin-bottom: rem(35);
+.sticky-banners .banner {
+  margin-bottom: rem(35);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include mq-range(557px, 1279px) {
+    margin-bottom: 0;
   }
 }

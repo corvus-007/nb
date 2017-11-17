@@ -1,5 +1,5 @@
 .post-imagebox {
-  @include make-fit-object(935, 431);
+  @include make-fit-object(935, 430);
 
   margin-bottom: rem(30);
   background-color: rgba($black-color, 0.1);
@@ -14,6 +14,12 @@
     z-index: 2;
     opacity: 0.5;
     background-image: linear-gradient(to top, $black-color, rgba($black-color, 0) 70%);
+  }
+
+  @include mq-max(567px) {
+    &::before {
+      padding-top: calc(530 / 935 * 100%);
+    }
   }
 }
 
@@ -35,7 +41,7 @@
     height: rem(15);
     margin-right: 0.2rem;
     vertical-align: middle;
-    background-color: currentColor;
+    background: url("images/icon-camera.svg") no-repeat center / contain;
   }
 
   a {

@@ -8,5 +8,9 @@
 }
 
 .main-footer-informers__item {
+  margin-right: 0.5rem;
 
+  &:last-child {
+    margin-right: 0;
+  }
 }

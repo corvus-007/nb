@@ -1,15 +1,21 @@
 .navbar {
   background-color: $secondary-color;
-  padding-top: rem(17);
-  padding-bottom: rem(17);
+  // padding-top: rem(17);
+  // padding-bottom: rem(17);
+  // box-shadow: 0 rem(17) 0 $secondary-color, 0 rem(-17) 0 $secondary-color;
   z-index: 20;
+  outline: rem(17) solid $secondary-color;
+  // transition: ($duration * 1.5);
+  // opacity: 0.5;
   // transition: padding $duration / 2;
   // will-change: padding;
 }
 
 .is-sticky .navbar {
-  padding-top: 0;
-  padding-bottom: 0;
+  // padding-top: 0;
+  // padding-bottom: 0;
+  outline: rem(0) solid $secondary-color;
+  // box-shadow: 0 0 0 $secondary-color, 0 0 0 $secondary-color;
 }
 
 .navbar__inner {
@@ -21,6 +27,9 @@
 .navbar__logo {
   flex-shrink: 0;
   margin-right: rem($grid-gutter-width);
+  transform-origin: 0 50%;
+  // transition: transform $duration * 2;
+  will-change: transform;
   // transition: transform $duration;
   // will-change: transform;
 }

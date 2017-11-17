@@ -2,4 +2,27 @@
   margin-bottom: rem(35);
   padding-bottom: rem(35);
   border-bottom: 1px solid #eef1f0;
+
+  @include mq-min(768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.main-footer-panel__item {
+  margin-bottom: rem(15);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include mq-min(768px) {
+    margin-right: rem(30);
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }

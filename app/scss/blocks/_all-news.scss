@@ -16,7 +16,16 @@
   margin-bottom: $grid-gutter-width;
   font-size: rem(15);
 
-  @include mq-min(1280px) {
+  @include mq-range(568px, 991px) {
+    width: calc((100% - 1 * #{$grid-gutter-width}) / 2);
+    margin-right: $grid-gutter-width;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  @include mq-min(992px) {
     width: calc((100% - 4 * #{$grid-gutter-width}) / 5);
     margin-right: $grid-gutter-width;
 
