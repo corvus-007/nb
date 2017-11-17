@@ -4,23 +4,19 @@
       <div class="topbar__item topbar__item--infobar">
         <div class="infobar">
           <ul class="infobar__list">
-            <li class="infobar__item">
-              <svg class="infobar__icon" width="18" height="18">
-                <use xlink:href=""></use>
+            <li class="infobar__item" title="Погода">
+              <svg class="infobar__icon" width="30" height="30">
+                <use xlink:href="images/symbols.svg#weather-8"></use>
               </svg>
-              <div class="infobar__value">+3°C</div>
+              <div class="infobar__value">+3°</div>
             </li>
-            <li class="infobar__item">
-              <svg class="infobar__icon" width="18" height="18">
-                <use xlink:href=""></use>
-              </svg>
-              <div class="infobar__value">57,47</div>
+            <li class="infobar__item" title="Курс доллара">
+              <span class="infobar__currency">$</span>
+              <span class="infobar__value">67,56</span>
             </li>
-            <li class="infobar__item">
-              <svg class="infobar__icon" width="18" height="18">
-                <use xlink:href=""></use>
-              </svg>
-              <div class="infobar__value">67,56</div>
+            <li class="infobar__item" title="Курс евро">
+              <span class="infobar__currency">€</span>
+              <span class="infobar__value">57,47</span>
             </li>
           </ul>
         </div>
@@ -29,32 +25,32 @@
         <div class="socials">
           <a class="socials__item" href="" title="Наш Брянск в Одноклассники">
             <svg class="socials__icon" width="18" height="18">
-              <use xlink:href="/images/symbols.svg#soc-odnoklassniki"></use>
+              <use xlink:href="images/symbols.svg#soc-odnoklassniki"></use>
             </svg>
           </a>
           <a class="socials__item" href="" title="Наш Брянск в Twitter">
             <svg class="socials__icon" width="18" height="18">
-              <use xlink:href="/images/symbols.svg#soc-twitter"></use>
+              <use xlink:href="images/symbols.svg#soc-twitter"></use>
             </svg>
           </a>
           <a class="socials__item" href="" title="Наш Брянск в Вконтакте">
             <svg class="socials__icon" width="18" height="18">
-              <use xlink:href="/images/symbols.svg#soc-vk"></use>
+              <use xlink:href="images/symbols.svg#soc-vk"></use>
             </svg>
           </a>
           <a class="socials__item" href="" title="Наш Брянск в Facebook">
             <svg class="socials__icon" width="18" height="18">
-              <use xlink:href="/images/symbols.svg#soc-facebook"></use>
+              <use xlink:href="images/symbols.svg#soc-facebook"></use>
             </svg>
           </a>
           <a class="socials__item" href="" title="Наш Брянск в Instagram">
             <svg class="socials__icon" width="18" height="18">
-              <use xlink:href="/images/symbols.svg#soc-instagram"></use>
+              <use xlink:href="images/symbols.svg#soc-instagram"></use>
             </svg>
           </a>
           <a class="socials__item" href="" title="Наш Брянск в Google+">
             <svg class="socials__icon" width="18" height="18">
-              <use xlink:href="/images/symbols.svg#soc-google-plus"></use>
+              <use xlink:href="images/symbols.svg#soc-google-plus"></use>
             </svg>
           </a>
         </div>
@@ -63,15 +59,15 @@
         <div class="searchbar searchbar--closed">
           <button class="searchbar-toggler" type="button" aria-label="Показать поиск">
             <svg class="searchbar-toggler__icon" width="18" height="18">
-              <use xlink:href="/images/symbols.svg#search"></use>
+              <use xlink:href="images/symbols.svg#search"></use>
             </svg>
           </button>
           <div class="searchbar__content">
             <form class="searchbar__form searchbox searchbox--black" action="" method="GET">
-              <input class="searchbox__input form-control" type="search" name="s" placeholder="Поиск">
+              <input class="searchbox__input form-control" type="search" name="s" placeholder="Введите слово или фразу для поиска и нажмите Enter">
               <button class="searchbox__submit" aria-label="Искать">
                 <svg class="searchbox__submit-icon" width="18" height="18">
-                  <use xlink:href="/images/symbols.svg#search"></use>
+                  <use xlink:href="images/symbols.svg#search"></use>
                 </svg>
               </button>
             </form>
@@ -84,23 +80,68 @@
     <div class="navbar__inner container-fluid">
       <div class="navbar__logo logo">
         <a class="logo__link" href="/">
-          <img class="logo__image" src="http://placeholder.pics/svg/234x49/ddd/666-ddd" alt="Логотип компании «Название_компании»">
+          <img class="logo__image" src="images/logo-with-caption.svg" width="240" alt="Логотип компании «Название_компании»">
         </a>
       </div>
+      <button class="out-cover-toggler" type="button">Меню</button>
       <div class="main-nav-wrapper">
-        <nav id="main-nav" class="main-nav okayNav">
+        <nav id="main-nav" class="main-nav">
           <ul class="main-nav__list">
-            <li class="current-menu-item"><a href="">Россия и мир</a></li>
-            <li><a href="">Общество</a></li>
-            <li><a href="">Власть</a></li>
-            <li><a href="">Происшествия</a></li>
-            <li><a href="">Новости компаний</a></li>
-            <li><a href="">Спорт</a></li>
-            <li><a href="">Культура</a></li>
-            <li><a href="">Происшествия</a></li>
-            <li><a href="">Новости компаний</a></li>
-            <li><a href="">Спорт</a></li>
-            <li><a href="">Культура</a></li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Россия и мир</span>
+              </a>
+            </li>
+            <li class="main-nav__item main-nav__item--active">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Общество</span>
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Власть</span>
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Происшествия</span>
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Новости компаний</span>
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Спорт</span>
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Культура</span>
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Происшествия</span>
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Новости компаний</span>
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Спорт</span>
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">
+                <span class="main-nav__link-text">Культура</span>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
