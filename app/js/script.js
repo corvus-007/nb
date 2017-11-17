@@ -4,22 +4,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Navigation
   const KEYCODE_ESC = 27;
-  var navigation = $('#main-nav').okayNav({
-    parent: '.main-nav-wrapper'
-  });
+
+  if (window.matchMedia('(min-width: 992px)').matches) {
+    var navigation = $('#main-nav').okayNav({
+      parent: '.main-nav-wrapper',
+      swipe_enabled: false
+    });
+  }
 
   $('.navbar').sticky({
     zIndex: 20
   });
 
-  $('navbar').stick_in_parent({
-    parent: '.main-wrapper'
-  });
-
   $('.sticky-banners').stick_in_parent({
     parent: '.js-parent-sticky-sidebar-banners',
-    offset_top: 50
+    offset_top: 56
   });
+
+  if (window.matchMedia('(max-width: 1279px)').matches) {
+    $('.sticky-banners').trigger('sticky_kit:detach');
+  }
 
   let searchbar = document.querySelector('.searchbar');
 
