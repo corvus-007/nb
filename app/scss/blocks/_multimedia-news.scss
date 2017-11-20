@@ -155,12 +155,12 @@
   }
 }
 
-.multimedia-news__item-time {
+.multimedia-news__item-date {
   margin-bottom: 0.2rem;
 }
 
 @include mq-min(568px) {
-  .multimedia-news__item:first-child .multimedia-news__item-time {
+  .multimedia-news__item:first-child .multimedia-news__item-date {
     display: none;
   }
 }
