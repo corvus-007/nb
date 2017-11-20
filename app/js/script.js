@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('script.js');
 
   // Navigation
-  const KEYCODE_ESC = 27;
+
 
   if (window.matchMedia('(min-width: 992px)').matches) {
     var navigation = $('#main-nav').okayNav({
@@ -25,50 +25,4 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.sticky-banners').trigger('sticky_kit:detach');
   }
 
-  let searchbar = document.querySelector('.searchbar');
-
-  if (searchbar) {
-    let searchbarToggler = searchbar.querySelector('.searchbar-toggler');
-    let searchbarInput = searchbar.querySelector('.searchbox__input');
-
-    let onSearchBarEscPress = function(event) {
-      if (event.keyCode === KEYCODE_ESC) {
-        hideSearchBarContent();
-      }
-    };
-
-    let onSearchBarClickOut = function(event) {
-      var parentNode = event.target;
-      var isClickOut = true;
-
-      while (parentNode) {
-        if (parentNode.classList.contains('searchbar')) {
-          isClickOut = false;
-          break;
-        }
-        parentNode = parentNode.parentElement;
-      }
-
-      if (isClickOut) {
-        hideSearchBarContent();
-      }
-    };
-
-    let showSearchBarContent = function() {
-      searchbar.classList.remove('searchbar--closed');
-      searchbarInput.focus();
-      document.addEventListener('keydown', onSearchBarEscPress);
-      document.addEventListener('click', onSearchBarClickOut);
-    };
-
-    let hideSearchBarContent = function() {
-      searchbar.classList.add('searchbar--closed');
-      document.removeEventListener('keydown', onSearchBarEscPress);
-    };
-
-    searchbarToggler.addEventListener('click', function(event) {
-      event.preventDefault();
-      showSearchBarContent();
-    });
-  }
 });

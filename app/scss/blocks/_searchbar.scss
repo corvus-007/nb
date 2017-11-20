@@ -3,29 +3,15 @@
 }
 
 .searchbar__form {
-
-  .searchbox__input {
-    padding-top: rem(7);
-    padding-bottom: rem(7);
-    background-color: $black-color;
-    color: $white-color;
-    font-family: $primary-font;
-    border-color: $black-color;
-    font-size: rem(24);
-  }
-
-  .searchbox__submit {
-    color: $white-color;
-  }
 }
 
 .searchbar__content {
   position: absolute;
   top: -0.5rem;
-  bottom: 0;
   right: rem(15);
   width: calc(100% - 2 * #{rem(15)});
   margin-left: auto;
+  overflow: hidden;
   transition: width ($duration * 2);
   will-change: width;
 
@@ -35,7 +21,47 @@
   }
 }
 
+.searchbar__input {
+  padding-top: rem(8.5);
+  padding-bottom: rem(8.5);
+  background-color: $black-color;
+  color: $white-color;
+  font-family: $primary-font;
+  border: none;
+  font-size: rem(24);
+
+  &:hover {
+    background-color: $black-color;
+    color: $white-color;
+  }
+
+  &:focus {
+    background-color: $black-color;
+    color: $white-color;
+  }
+}
+
+.searchbar__submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  padding-left: rem(15);
+  padding-right: rem(15);
+  background: none;
+  border: none;
+  font-size: 0;
+  color: $white-color;
+  cursor: pointer;
+}
+
+.searchbar__submit-icon {
+  margin: auto;
+  fill: currentColor;
+  transition: $duration;
+}
+
 .searchbar--closed .searchbar__content {
   width: 0;
-  // overflow: hidden;
 }
