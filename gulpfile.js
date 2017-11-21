@@ -52,10 +52,12 @@ gulp.task('plugins-js', function() {
     .src([
       'app/js/plugins/svg4everybody.js',
       'app/js/plugins/okayNav.js',
-      'app/js/plugins/jquery.sticky.js',
+      // 'app/js/plugins/jquery.sticky.js',
       'app/js/plugins/sticky-kit.min.js',
       'app/js/plugins/util.js',
-      'app/js/plugins/searchbar.js'
+      'app/js/plugins/searchbar.js',
+      'app/js/plugins/navbar.js',
+      'app/js/plugins/out-cover.js'
     ])
     .pipe(concat('plugins.js'))
     // .pipe(uglify())
