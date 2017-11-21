@@ -12,12 +12,13 @@ body {
   color: $base-color;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+
+  &.no-scroll {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }
 }
-
-
-// .container {
-//   @include make-container();
-// }
 
 .container-fluid {
   @include make-container-fluid();

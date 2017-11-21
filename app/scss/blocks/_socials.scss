@@ -10,7 +10,7 @@
   margin-right: 1.2em;
   border: none;
   transition: $duration;
-  color: $white-color;
+  color: currentColor;
 
   &:hover,
   &:focus {
