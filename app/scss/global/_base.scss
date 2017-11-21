@@ -14,17 +14,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.container {
-  @include make-container();
-}
 
-.container-slim {
-  @include make-slim-container();
-}
-
-.container-fat {
-  @include make-fat-container();
-}
+// .container {
+//   @include make-container();
+// }
 
 .container-fluid {
   @include make-container-fluid();
@@ -32,7 +25,6 @@ body {
 
 a {
   color: $link-color;
-  // text-decoration: none;
   outline: none;
 
   &:hover {

@@ -23,10 +23,6 @@
 .main-nav__item {
   flex-shrink: 0;
   flex-grow: 0;
-  font-weight: 700;
-  font-size: rem(16);
-  font-family: $secondary-font;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -37,7 +33,11 @@
 .main-nav__link {
   display: block;
   padding: rem(35/2);
+  font-weight: 700;
+  font-size: rem(16);
+  font-family: $secondary-font;
   color: $black-color;
+  text-transform: uppercase;
   text-decoration: none;
 
   &:hover,
