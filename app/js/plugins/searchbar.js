@@ -14,15 +14,10 @@ window.searchbar = (function() {
     };
 
     var onSearchBarClickOut = function(event) {
-      var parentNode = event.target;
       var isClickOut = true;
 
-      while (parentNode) {
-        if (parentNode.classList.contains('searchbar')) {
-          isClickOut = false;
-          break;
-        }
-        parentNode = parentNode.parentElement;
+      if (searchbar.contains(event.target)) {
+        isClickOut = false;
       }
 
       if (isClickOut) {
