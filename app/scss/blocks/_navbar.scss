@@ -1,6 +1,6 @@
 .navbar__wrapper {
-  padding-top: rem(15);
-  padding-bottom: rem(15);
+  padding-top: rem(13);
+  padding-bottom: rem(13);
   background-color: $secondary-color;
 }
 
@@ -41,4 +41,13 @@
 
 .navbar--sticky .navbar__logo {
   transform: scale(0.7);
+}
+
+.navbar__main-nav-wrapper {
+  flex-grow: 1;
+  z-index: 5;
+
+  @include mq-max(991px) {
+    display: none;
+  }
 }

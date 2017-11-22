@@ -80,11 +80,14 @@
     <div class="navbar__inner container-fluid">
       <div class="navbar__logo logo">
         <a class="logo__link" href="/">
-          <img class="logo__image" src="images/logo-with-caption.svg" width="240" alt="Логотип компании «Название_компании»">
+          <picture>
+            <source media="(min-width: 568px)" srcset="images/logo-with-caption.svg">
+            <img class="logo__image" src="images/logo.svg" width="240" alt="Логотип компании «Название_компании»">
+          </picture>
         </a>
       </div>
       <button class="out-cover-toggler" type="button">Меню</button>
-      <div class="main-nav-wrapper">
+      <div class="navbar__main-nav-wrapper">
         <nav id="main-nav" class="main-nav">
           <ul class="main-nav__list">
             <li class="main-nav__item">
