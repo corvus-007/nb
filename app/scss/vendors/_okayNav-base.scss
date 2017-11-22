@@ -1,20 +1,18 @@
-/*
- * We are hiding the invisible nav outside the screen
- * so we need to avoid the horizontal scroll
- */
-
 .okayNav:not(.loaded) {
   visibility: hidden;
   user-select: none;
 }
+
 .okayNav ul {
   /* We want two navigations - one hidden and one visible */
   float: left;
 }
+
 .okayNav a {
   position: relative;
   z-index: 1;
 }
+
 .okayNav__nav--visible {
   overflow: hidden;
   white-space: nowrap;
@@ -22,20 +20,19 @@
 .okayNav__nav--visible li {
   display: inline-block;
 }
+
 .okayNav__nav--visible a {
-  /* Link styling for the visible part of the nav */
   display: block;
-  /*padding: 15px 15px;*/
-  /*transition: color 200ms cubic-bezier(0.55, 0, 0.1, 1);*/
 }
+
 .okayNav__nav--visible:empty ~ .okayNav__menu-toggle {
   top: 0;
 }
-/* Link styling for the off-screen part of the nav */
+
 .okayNav__nav--invisible {
   min-width: 220px;
   position: absolute;
-  top: calc(100% + #{rem(17)});
+  top: calc(100% + #{rem(15)});
   right: 0;
   z-index: 3;
   margin: 0;
@@ -45,25 +42,19 @@
   list-style: none;
   opacity: 0;
   visibility: hidden;
-  -webkit-overflow-scrolling: touch;
   transition: all 400ms cubic-bezier(0.55, 0, 0.1, 1), visibility 0s 400ms;
   background-color: $secondary-color;
-  // outline: 1px solid #fc5185;
+  -webkit-overflow-scrolling: touch;
 }
 
-.is-sticky .okayNav__nav--invisible {
+.navbar--sticky .okayNav__nav--invisible {
   top: 100%;
 }
 
-.okayNav__nav--invisible a {
-  // display: block;
-  // width: 240px;
-  // padding: 15px;
-  // background: #fff;
-}
 .okayNav__nav--invisible.transition-enabled {
   transition: all 400ms cubic-bezier(0.55, 0, 0.1, 1);
 }
+
 .okayNav__nav--invisible.nav-open {
   transform: translateY(0) !important;
   visibility: visible;
@@ -83,12 +74,14 @@
   transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
   transform: rotate(90deg);
 }
+
 .okayNav__menu-toggle.okay-invisible {
   position: absolute;
   user-select: none;
   pointer-events: none;
   opacity: 0;
 }
+
 .okayNav__menu-toggle span {
   position: absolute;
   right: 0;
@@ -101,20 +94,24 @@
   border-radius: 50%;
   background: $base-color;
 }
+
 .okayNav__menu-toggle span:nth-child(1) {
   top: 0;
 }
+
 .okayNav__menu-toggle span:nth-child(2) {
   top: 50%;
   transform: translateY(-50%);
 }
+
 .okayNav__menu-toggle span:nth-child(3) {
   bottom: 0;
 }
+
 .okayNav__menu-toggle.icon--active {
-  /* Kebab icon when off-screen nav is open */
   transform: rotate(0);
 }
+
 .okayNav__menu-toggle.icon--active span {
   background: $accent-color;
 }
