@@ -54,15 +54,24 @@ gulp.task('plugins-js', function() {
       'app/js/plugins/imagesloaded.pkgd.min.js',
       'app/js/plugins/okayNav.js',
       // 'app/js/plugins/jquery.sticky.js',
-      'app/js/plugins/sticky-kit.min.js',
-      'app/js/plugins/util.js',
-      'app/js/plugins/searchbar.js',
-      'app/js/plugins/navbar.js',
-      'app/js/plugins/out-cover.js',
-      'app/js/plugins/main-nav.js'
+      'app/js/plugins/sticky-kit.min.js'
     ])
     .pipe(concat('plugins.js'))
     // .pipe(uglify())
+    .pipe(gulp.dest('build/js'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('modules-js', function() {
+  gulp
+    .src([
+      'app/js/modules/util.js',
+      'app/js/modules/searchbar.js',
+      'app/js/modules/navbar.js',
+      'app/js/modules/out-cover.js',
+      'app/js/modules/main-nav.js'
+    ])
+    .pipe(concat('modules.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(browserSync.stream());
 });
@@ -129,6 +138,7 @@ gulp.task('build', function(fn) {
     'copy',
     'style',
     'plugins-js',
+    'modules-js',
     'copy-script',
     'fileinclude',
     'copy-images',
@@ -150,7 +160,8 @@ gulp.task('serve', function() {
   gulp.watch('app/images/**/*', ['copy-images']);
   gulp.watch('build/images/svg-symbols/*.svg', ['symbols']);
   gulp.watch('app/js/plugins/*.js', ['plugins-js']);
-  gulp.watch(['app/js/*.{js,json}', '!app/js/plugins/**'], ['copy-script']);
+  gulp.watch('app/js/modules/*.js', ['modules-js']);
+  gulp.watch('app/js/*.{js,json}', ['copy-script']);
   gulp
     .watch(['app/*.html', 'app/blocks/**/*.html'], ['fileinclude'])
     .on('change', browserSync.reload);
