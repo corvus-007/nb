@@ -20,8 +20,8 @@ body {
   }
 }
 
-.container-fluid {
-  @include make-container-fluid();
+.container {
+  @include make-container();
 }
 
 a {
