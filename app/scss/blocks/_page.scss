@@ -7,7 +7,7 @@
 }
 
 .page__breadcrumbs {
-  @include make-slim-container();
+  @include make-container();
 
   min-height: 60px;
 }
