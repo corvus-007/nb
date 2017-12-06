@@ -43,7 +43,7 @@ gulp.task('style', function() {
         ])
       )
       // .pipe(minify())
-      .pipe(gulp.dest('build/'))
+      .pipe(gulp.dest('build/css'))
       .pipe(browserSync.stream()) );
 });
 
