@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Поиск</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <div class="banner top-banner">
+      <a href="">
+        <picture>
+          <source srcset="http://news.nashbryansk.ru/v2/img/b_data/2017/1/domru/domru_10_3840x240.jpg" media="(min-width: 1000px)">
+          <source srcset="http://placehold.it/800x80/" media="(min-width: 800px)">
+          <img src="http://placehold.it/600x80/" alt="">
+        </picture>
+      </a>
+      <!-- <iframe src="http://news.nashbryansk.ru/v2/img/b_data/2017/8/gortaxi.html?v=1?v=70" frameborder="0"></iframe> -->
+    </div>
+    @@include('blocks/main-header.html')
+
+    <main class="main">
+      <div class="main-grid container js-parent-sticky-sidebar-banners">
+        <div class="main-grid__column-main">
+          <div class="banner">
+            <!-- <img src="http://placeholder.pics/svg/935x100/ddd/666-ddd" alt=""> -->
+            <iframe class="b_data b_data_3" name="b_data_3" src="http://news.nashbryansk.ru/v2/img/b_data/2016/5/gm_shirokoformatnaiapechat_hor/index.html?v=70" data-val="6" data-alt="Глобал Медиа" data-href="http://global-reklama.ru" data-img="/v2/img/b_data/2016/5/gm_shirokoformatnaiapechat_hor/index.html" data-img2="" data-img3="" data-img4="/v2/img/b_data/2016/5/gm_shirokoformatnaiapechat_hor/m/index.html"></iframe>
+          </div>
+          <div class="search">
+            <h1 class="page-title section-title">Результаты поиска</h1>
+            <form class="search-form" action="" method="get">
+              <label class="search-form-query">
+                <span class="search-form-query__label">Вы искали</span>
+                <input class="search-form-query__input form-control" type="search" name="q" value="Брянск">
+              </label>
+              <div class="search-form__row">
+                <fieldset class="search-form-filter">
+                  <legend class="search-form-filter__title">Тип материала:</legend>
+                  <div class="search-form-filter-group">
+                    <div class="search-form-filter-group__item search-form-filter__item">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="type" value="news">
+                        <span class="checkbox__label">Новости и статьи</span>
+                      </label>
+                    </div>
+                    <div class="search-form-filter-group__item search-form-filter__item">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="type" value="video">
+                        <span class="checkbox__label">Видео</span>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="search-form-filter">
+                  <legend class="search-form-filter__title">Диапазон дат:</legend>
+                  <div class="search-form-filter__item">
+                    <label class="selectbox">
+                      <select class="selectbox__select form-control form-control--small" name="date">
+                        <option value="">За весь период</option>
+                        <option value="">За последнюю неделю</option>
+                        <option value="">За последний месяц</option>
+                        <option value="">За последний месяц</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="search-form-filter__item">
+                    <div class="date-range">
+                      <div class="date-range__filed">
+                        <input class="date-range__input form-control form-control--small" type="text" name="dateStart">
+                      </div>
+                      <span class="date-range__text">до</span>
+                      <div class="date-range__filed">
+                        <input class="date-range__input form-control form-control--small" type="text" name="dateEnd">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="search-form__submit-wrapper">
+                  <button class="search-form__submit" type="submit">Поиск</button>
+                </div>
+              </div>
+            </form>
+            <div class="search-output">
+              <ul class="search-output__list">
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1080" alt="Стрельба в Белых Берегах: брянская полиция выясняет, кто прав, кто виноват">
+                    <h3 class="search-output__item-title">Стрельба в Белых Берегах: брянская полиция выясняет, кто прав, кто виноват</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1067" alt="Осиротевшая косуля нашла в заповеднике «Брянский лес» приемную маму">
+                    <h3 class="search-output__item-title">Осиротевшая косуля нашла в заповеднике «Брянский лес» приемную маму</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1041" alt="«Дон Кихот Деснянский»: в Брянске презентуют фильм о Валентине Динабургском">
+                    <h3 class="search-output__item-title">«Дон Кихот Деснянский»: в Брянске презентуют фильм о Валентине Динабургском</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1032" alt="Доступная среда по-брянски: высокие бордюры, разбитые тротуары и узкие пандусы">
+                    <h3 class="search-output__item-title">Доступная среда по-брянски: высокие бордюры, разбитые тротуары и узкие пандусы</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item search-output__item--banner">
+                  <div class="banner">
+                    <a href="">
+                      <!-- <img src="http://placeholder.pics/svg/935x100/ddd/666-ddd" alt=""> -->
+                      <img src="http://news.nashbryansk.ru/v2/img/b_data/2017/8/800x100_loco.gif?v=70" alt="">
+                    </a>
+                  </div>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1080" alt="Стрельба в Белых Берегах: брянская полиция выясняет, кто прав, кто виноват">
+                    <h3 class="search-output__item-title">Стрельба в Белых Берегах: брянская полиция выясняет, кто прав, кто виноват</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1067" alt="Осиротевшая косуля нашла в заповеднике «Брянский лес» приемную маму">
+                    <h3 class="search-output__item-title">Осиротевшая косуля нашла в заповеднике «Брянский лес» приемную маму</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1041" alt="«Дон Кихот Деснянский»: в Брянске презентуют фильм о Валентине Динабургском">
+                    <h3 class="search-output__item-title">«Дон Кихот Деснянский»: в Брянске презентуют фильм о Валентине Динабургском</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1032" alt="Доступная среда по-брянски: высокие бордюры, разбитые тротуары и узкие пандусы">
+                    <h3 class="search-output__item-title">Доступная среда по-брянски: высокие бордюры, разбитые тротуары и узкие пандусы</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item search-output__item--banner">
+                  <div class="banner">
+                    <a href="">
+                      <!-- <img src="http://placeholder.pics/svg/935x100/ddd/666-ddd" alt=""> -->
+                      <img src="http://news.nashbryansk.ru/v2/img/b_data/2017/8/800x100_loco.gif?v=70" alt="">
+                    </a>
+                  </div>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1080" alt="Стрельба в Белых Берегах: брянская полиция выясняет, кто прав, кто виноват">
+                    <h3 class="search-output__item-title">Стрельба в Белых Берегах: брянская полиция выясняет, кто прав, кто виноват</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1067" alt="Осиротевшая косуля нашла в заповеднике «Брянский лес» приемную маму">
+                    <h3 class="search-output__item-title">Осиротевшая косуля нашла в заповеднике «Брянский лес» приемную маму</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1041" alt="«Дон Кихот Деснянский»: в Брянске презентуют фильм о Валентине Динабургском">
+                    <h3 class="search-output__item-title">«Дон Кихот Деснянский»: в Брянске презентуют фильм о Валентине Динабургском</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+                <li class="search-output__item">
+                  <a class="search-output__item-link" href="post-news.html">
+                    <img class="search-output__item-image" src="https://picsum.photos/1000/600?image=1032" alt="Доступная среда по-брянски: высокие бордюры, разбитые тротуары и узкие пандусы">
+                    <h3 class="search-output__item-title">Доступная среда по-брянски: высокие бордюры, разбитые тротуары и узкие пандусы</h3>
+                    <span class="search-output__item-rubric rubric">
+                      Общество
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="button-wrapper">
+                <a class="button" href="">Еще больше новостей</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        @@include('blocks/main-grid-right.html')
+      </div>
+
+      @@include('blocks/all-news.html')
+    </main>
+
+    @@include('blocks/main-footer.html')
+  </div>
+  @@include('blocks/site-scripts.html')
+</body>
+</html>
