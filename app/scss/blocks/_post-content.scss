@@ -1,6 +1,9 @@
 .post-content {
   @include make-textual();
 
+  min-width: 100%;
+  width: 1px;
+
   margin-bottom: 1.5rem;
 
   .video-container {

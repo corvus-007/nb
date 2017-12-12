@@ -1,0 +1,50 @@
+.date-range {
+  display: flex;
+  flex-direction: column;
+
+  @include mq-min(840px) {
+    align-items: baseline;
+    flex-direction: row;
+  }
+}
+
+.date-range__filed {
+  position: relative;
+  flex-grow: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: rem(22 + (14 * 1.35));
+    background: $accent-color url("../images/icon-calendar.svg") no-repeat center / 0.8rem;
+    pointer-events: none;
+  }
+
+  @include mq-min(840px) {
+    &::before {
+      width: rem(10 + (12 * 1.35));
+    }
+  }
+}
+
+.date-range__input {
+  padding-right: rem(22 + (14 * 1.35));
+
+  @include mq-min(840px) {
+    padding-right: rem(10 + (12 * 1.35));
+
+  }
+}
+
+.date-range__text {
+
+  @include mq-min(840px) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: rem(12);
+  }
+}

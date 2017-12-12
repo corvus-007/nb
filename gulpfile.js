@@ -54,7 +54,10 @@ gulp.task('plugins-js', function() {
       'app/js/plugins/imagesloaded.pkgd.min.js',
       'app/js/plugins/okayNav.js',
       // 'app/js/plugins/jquery.sticky.js',
-      'app/js/plugins/sticky-kit.min.js'
+      'app/js/plugins/sticky-kit.min.js',
+      'app/js/plugins/flatpickr.min.js',
+      'app/js/plugins/ru.js',
+      'app/js/plugins/fotorama.js'
     ])
     .pipe(concat('plugins.js'))
     // .pipe(uglify())
@@ -69,6 +72,7 @@ gulp.task('modules-js', function() {
       'app/js/modules/searchbar.js',
       'app/js/modules/navbar.js',
       'app/js/modules/out-cover.js',
+      'app/js/modules/search-form.js',
       'app/js/modules/main-nav.js'
     ])
     .pipe(concat('modules.js'))

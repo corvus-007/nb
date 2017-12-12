@@ -1,0 +1,15 @@
+.search-form-filter-group {
+  display: flex;
+
+  @include mq-min(840px) {
+    flex-direction: column;
+  }
+}
+
+.search-form-filter-group__item {
+  margin-right: rem(20);
+
+  @include mq-min(840px) {
+    margin-right: 0;
+  }
+}

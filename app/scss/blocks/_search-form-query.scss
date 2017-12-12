@@ -1,0 +1,26 @@
+.search-form-query {
+  display: block;
+  width: 100%;
+  margin-bottom: rem(20);
+  font-family: $secondary-font;
+
+  @include mq-min(667px) {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.search-form-query__label {
+  display: block;
+  padding-bottom: rem(5);
+  white-space: nowrap;
+
+  @include mq-min(667px) {
+    padding-right: rem(15);
+    padding-bottom: 0;
+  }
+}
+
+.search-form-query__input {
+
+}
