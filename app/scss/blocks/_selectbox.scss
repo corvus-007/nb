@@ -13,24 +13,14 @@
     background: $accent-color url("../images/icon-arrow-down.svg") no-repeat center / 1.1rem;
     pointer-events: none;
   }
-
-  @include mq-min(840px) {
-    &::before {
-      width: rem(10 + (12 * 1.35));
-    }
-  }
 }
 
-.selectbox__select {
+.selectbox select {
   cursor: pointer;
-  padding-right: rem(22 + (14 * 1.35));
+  padding-right: rem(22 + (14 * 1.35) + 5);
   appearance: none;
 
   option {
     font-size: rem(20);
-  }
-
-  @include mq-min(840px) {
-    padding-right: rem(10 + (12 * 1.35));
   }
 }
