@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Правила цитирования</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <div class="banner top-banner">
+      <a href="">
+        <picture>
+          <source srcset="http://news.nashbryansk.ru/v2/img/b_data/2017/1/domru/domru_10_3840x240.jpg" media="(min-width: 1000px)">
+          <source srcset="http://placehold.it/800x80/" media="(min-width: 800px)">
+          <img src="http://placehold.it/600x80/" alt="">
+        </picture>
+      </a>
+      <!-- <iframe src="http://news.nashbryansk.ru/v2/img/b_data/2017/8/gortaxi.html?v=1?v=70" frameborder="0"></iframe> -->
+    </div>
+    @@include('blocks/main-header.html')
+
+    <main class="main">
+      <div class="main-grid container js-parent-sticky-sidebar-banners">
+        <div class="main-grid__column-main">
+          <div class="banner">
+            <!-- <img src="http://placeholder.pics/svg/935x100/ddd/666-ddd" alt=""> -->
+            <iframe class="b_data b_data_3" name="b_data_3" src="http://news.nashbryansk.ru/v2/img/b_data/2016/5/gm_shirokoformatnaiapechat_hor/index.html?v=70" data-val="6" data-alt="Глобал Медиа" data-href="http://global-reklama.ru" data-img="/v2/img/b_data/2016/5/gm_shirokoformatnaiapechat_hor/index.html" data-img2="" data-img3="" data-img4="/v2/img/b_data/2016/5/gm_shirokoformatnaiapechat_hor/m/index.html"></iframe>
+          </div>
+          <div class="page">
+            <h1 class="page-title section-title">Правила использования материалов сетевого издания NASHBRYANSK.RU</h1>
+            <div class="page-content">
+              <p><b>Использование материалов, размещенных на сайте сетевого издания NASHBRYANSK.RU, допускается только при соблюдении правил, разработанных редакцией с учетом законодательства (далее по тексту — «Правила»).</b></p>
+
+              <ol class="custom-ol">
+                <li>Использование информационных текстовых и информационно-графических материалов NASHBRYANSK.RU возможно только в некоммерческих целях.</li>
+                <li>При использовании текстов, фотографий, а также видео, правообладателями которых является NASHBRYANSK.RU, необходимо оформлять ссылки на источник материалов. При воспроизведении в Интернете обязательное условие — прямая открытая для индексирования гиперссылка на ту страницу NASHBRYANSK.RU, где взята информация.</li>
+                <li>При указании NASHBRYANSK.RU как источника информации название сетевого издания необходимо писать в соответствии с копирайтом (NASHBRYANSK.RU). Какие-либо искажения недопустимы.</li>
+                <li>Фотографии и видеоматериалы NASHBRYANSK.RU разрешено использовать в некоммерческих целях в порядке, установленном пунктами 1−2 Правил. При этом они не могут быть изменены без письменного согласия главного редактора. В частности, запрещена установка водяных знаков (watermark) на фото и видеоматериалы NASHBRYANSK.RU.</li>
+                <li>При использовании текстов NASHBRYANSK.RU необходимо соблюдать точность воспроизведения. Переработка, искажающая содержание материалов, запрещена. Ответственность за искажение информации лежит на физическом или юридическом лице, использующем материалы NASHBRYANSK.RU.</li>
+                <li>Запрещено включение в RSS-рассылки сообщений, полностью дублирующих материалы NASHBRYANSK.RU.</li>
+                <li>Коммерческое распространение сообщений и материалов NASHBRYANSK.RU осуществляется только на основании договоров, заключенных в письменной форме. В случае несоблюдения указанных условий оплата производится за фактически использованный объем информации по ставкам, приведенным <a href="/uploads/2015/10/nashbryanskru_nash_bryansk_prais_copyright.doc">здесь</a>.</li>
+                <li>Перепечатка материалов NASHBRYANSK.RU, полученных из вторичных источников, возможна только со ссылкой на первоисточник — правообладателя.</li>
+              </ol>
+
+              <hr>
+
+              <p><em>Внимание! Использование материалов NASHBRYANSK.RU с нарушением Правил, считается незаконным. Так как эти Правила, не являются договором, редакция вправе в любое время изменить их в одностороннем порядке без какого-либо специального уведомления. Новая редакция Правил вступает в силу с момента ее размещения по адресу: <a href="/disclaimer/">news.nashbryansk.ru/disclaimer/</a></em></p>
+
+              <hr>
+
+              <p>По всем вопросам, связанным с материалами NASHBRYANSK.RU, напишите по адресу электронной почты <a href="mailto:info@nashbryansk.ru">info@nashbryansk.ru</a> или же звоните по телефону (4832) 60-64-80.</p>
+
+            </div>
+          </div>
+        </div>
+
+        @@include('blocks/main-grid-right.html')
+      </div>
+
+      @@include('blocks/all-news.html')
+    </main>
+
+    @@include('blocks/main-footer.html')
+  </div>
+  @@include('blocks/site-scripts.html')
+</body>
+</html>
