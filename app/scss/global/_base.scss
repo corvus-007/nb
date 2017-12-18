@@ -27,6 +27,7 @@ body {
 a {
   color: $link-color;
   outline: none;
+  text-decoration: none;
 
   &:hover {
     color: mix(#000, $link-color, 10%);
@@ -77,4 +78,8 @@ img {
 
 .visuallyhidden:not(:focus):not(:active) {
   @include visuallyhidden();
+}
+
+.clear-list {
+  @include clear-list();
 }
