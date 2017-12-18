@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Рекламные услуги</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <div class="banner top-banner">
+      <a href="">
+        <picture>
+          <source srcset="http://news.nashbryansk.ru/v2/img/b_data/2017/1/domru/domru_10_3840x240.jpg" media="(min-width: 1000px)">
+          <source srcset="http://placehold.it/800x80/" media="(min-width: 800px)">
+          <img src="http://placehold.it/600x80/" alt="">
+        </picture>
+      </a>
+      <!-- <iframe src="http://news.nashbryansk.ru/v2/img/b_data/2017/8/gortaxi.html?v=1?v=70" frameborder="0"></iframe> -->
+    </div>
+    @@include('blocks/main-header.html')
+
+    <main class="main">
+      <div class="main-grid container js-parent-sticky-sidebar-banners">
+        <div class="main-grid__column-main">
+          <div class="banner">
+            <!-- <img src="http://placeholder.pics/svg/935x100/ddd/666-ddd" alt=""> -->
+            <iframe class="b_data b_data_3" name="b_data_3" src="http://news.nashbryansk.ru/v2/img/b_data/2016/5/gm_shirokoformatnaiapechat_hor/index.html?v=70" data-val="6" data-alt="Глобал Медиа" data-href="http://global-reklama.ru" data-img="/v2/img/b_data/2016/5/gm_shirokoformatnaiapechat_hor/index.html" data-img2="" data-img3="" data-img4="/v2/img/b_data/2016/5/gm_shirokoformatnaiapechat_hor/m/index.html"></iframe>
+          </div>
+          <div class="page">
+            <h1 class="page-title section-title">Рекламные услуги</h1>
+            <div class="page-content">
+              <h2>Скачайте:</h2>
+
+              <ul class="clear-list">
+                <li><a title="Медиакит NASHBRYANSK.RU, документ Adobe Reader" href="/files/Mediakit_NashBryansk.pdf" target="_blank"><span class="icon-file-pdf"></span> Медиакит</a></li>
+                <li><a href="/files/Trebovaniia_k_banneram_NashBriansk.RU_10_2016.pdf" target="_blank"><span class="icon-file-pdf"></span> Требования к рекламе</a></li>
+              </ul>
+
+              <p>Телефоны рекламного отдела: <strong><a href="tel:+79611064336" target="_blank">(4832) 8-961-106-43-36</a>, <a href="tel:+74832606480" target="_blank">(4832) 60-64-80</a></strong>.<br>Электронная почта: <strong><a href="mailto:reklama@nashbryansk.ru">reklama@nashbryansk.ru</a></strong></p>
+
+              <p>Если Вас интересуют условия размещения рекламы в интернет-газете NASHBRYANSK.RU воспользуйтесь формой обратной связи — наши специалисты в ближайшее время ответят на все Ваши вопросы.</p>
+
+              <h2>Форма обратной связи</h2>
+
+              <form class="feedback" action="" method="post">
+                <label class="form-item">
+                  <span class="form-label">Ваша фамилия и имя (обязательно)</span>
+                  <input class="form-control" type="text" name="v[your-name]" required>
+                </label>
+                <label class="form-item">
+                  <span class="form-label">Адрес эл.почты (обязательно)</span>
+                  <input class="form-control" type="email" name="v[your-email]" required>
+                </label>
+                <label class="form-item">
+                  <span class="form-label">Телефон</span>
+                  <input class="form-control" type="tel" name="v[your-tel]">
+                </label>
+                <label class="form-item">
+                  <span class="form-label">Сообщение</span>
+                  <textarea class="form-control" rows="5" name="v[your-message]"></textarea>
+                </label>
+                <button class="button form-submit">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        @@include('blocks/main-grid-right.html')
+      </div>
+
+      @@include('blocks/all-news.html')
+    </main>
+
+    @@include('blocks/main-footer.html')
+  </div>
+  @@include('blocks/site-scripts.html')
+</body>
+</html>
