@@ -1,5 +1,4 @@
-.custom-ol,
-ol:not([class]) {
+.custom-ol {
   margin-left: 0;
   margin-right: 0;
   padding: 0;
@@ -8,18 +7,22 @@ ol:not([class]) {
 
   li {
     position: relative;
-    padding-left: rem(35);
+    margin-bottom: 0.8rem;
+    padding-left: rem(40);
 
     &::before {
       counter-increment: ol-list;
       content: counter(ol-list, decimal-leading-zero);
       position: absolute;
-      left: rem(10);
-      // top: 0em;
+      top: -0.15em;
+      left: rem(5);
+      padding: 0.25rem 0.35rem;
+      font-size: rem(17);
       font-family: 'Roboto Mono', monospace;
-      color: $accent-color;
+      color: $white-color;
       text-align: center;
       border-radius: 50%;
+      background-color: $accent-color;
       box-sizing: border-box;
     }
   }

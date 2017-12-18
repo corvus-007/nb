@@ -29,10 +29,10 @@
 @import "blocks/search-form-filter";
 @import "blocks/search-form-filter-group";
 @import "blocks/date-range";
-@import "blocks/search-output";
 @import "blocks/socials";
 @import "blocks/top-banner";
 @import "blocks/table";
+@import "blocks/icon";
 @import "blocks/popup";
 @import "blocks/section";
 @import "blocks/section-header";
@@ -40,6 +40,9 @@
 @import "blocks/section-relationships-news";
 @import "blocks/custom-ol";
 @import "blocks/custom-ul";
+@import "blocks/search-output";
+@import "blocks/rubric-news";
+@import "blocks/archive-day-news";
 @import "blocks/banner";
 @import "blocks/sticky-banners";
 @import "blocks/date";
@@ -76,7 +79,9 @@
 @import "blocks/post-content";
 @import "blocks/post-incut";
 @import "blocks/page";
-@import "blocks/archive-events";
+@import "blocks/contatcs-info";
+// @import "blocks/archive-events";
+@import "blocks/archive-calendar";
 @import "blocks/main-footer";
 @import "blocks/main-footer-panel";
 @import "blocks/main-footer-grid";

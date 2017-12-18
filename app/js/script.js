@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     offset_top: 56
   });
 
+  $(document.body).trigger('sticky_kit:recalc');
+
   if (window.matchMedia('(max-width: 1279px)').matches) {
     $('.sticky-banners').trigger('sticky_kit:detach');
   }
@@ -26,7 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // $('.lenta-tabs .tabs-contents .side-news-block').remove();
             $('.feed-news__list').html(result['html'][0]);
             // $('.lenta-tabs .tabs-contents .tabs-contents-tab').eq(1).append(result['html'][1]);
-            $(document.body).trigger('sticky_kit:recalc');
+
+            $('.sticky-banners').stick_in_parent({
+              parent: '.js-parent-sticky-sidebar-banners',
+              offset_top: 56
+            });
           }
         }
       });
@@ -39,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $('.other-news-more').click(function() {
     var obj = $(this);
+    console.log(obj.data());
     var count = obj.data('count');
     var type = obj.data('type');
     var search = obj.data('searchString');
@@ -48,9 +55,31 @@ document.addEventListener('DOMContentLoaded', function() {
     var news_id = obj.data('newsId');
     var offset = obj.data('offset');
     var last_date = obj.data('lastDate');
-
-    $.ajax({
-      url:
+    var url =
+      '/index.php?v[mode]=site&v[action]=upload_other_news&v[count]=' +
+      count +
+      '&v[type]=' +
+      type +
+      '&v[search]=' +
+      search +
+      '&v[tag_id]=' +
+      tag_id +
+      '&v[rubric_id]=' +
+      rubric_id +
+      '&v[news_id]=' +
+      news_id +
+      '&v[offset]=' +
+      offset +
+      '&v[tag_type]=' +
+      tag_type +
+      '&v[last_date]=' +
+      last_date;
+    if (type == 'search') {
+      var search_type = obj.attr('data-search_type');
+      var search_date = obj.attr('date-search_date');
+      var search_datestart = obj.attr('date-search_datestart');
+      var search_dateend = obj.attr('date-search_dateend');
+      url =
         '/index.php?v[mode]=site&v[action]=upload_other_news&v[count]=' +
         count +
         '&v[type]=' +
@@ -68,7 +97,18 @@ document.addEventListener('DOMContentLoaded', function() {
         '&v[tag_type]=' +
         tag_type +
         '&v[last_date]=' +
-        last_date,
+        last_date +
+        '&v[search_type]=' +
+        search_type +
+        '&v[search_date]=' +
+        search_date +
+        '&v[search_datestart]=' +
+        search_datestart +
+        '&v[search_dateend]=' +
+        search_dateend;
+    }
+    $.ajax({
+      url: url,
       async: false,
       type: 'post',
       dataType: 'json',
@@ -84,7 +124,11 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'mainofweek': {
             }
             case 'event': {
-              obj.before($result['html']);
+              // obj.before($result['html']);
+              obj
+                .parent()
+                .find('.search-output__list')
+                .append($result['html']);
               break;
             }
             case 'page': {
@@ -117,6 +161,71 @@ document.addEventListener('DOMContentLoaded', function() {
         if ($result['empty']) obj.remove();
       }
     });
+  });
+
+  $('.form-control[name=date]').change(function() {
+    var today = new Date();
+    switch ($(this).val()) {
+      case '1': {
+        $('[name=dateStart]').val('');
+        $('[name=dateEnd]').val('');
+        break;
+      }
+      case '2': {
+        var lastWeek = new Date(
+          today.getFullYear(),
+          today.getMonth(),
+          today.getDate() - 7
+        );
+        $('[name=dateStart]').val(
+          lastWeek.getFullYear() +
+            '-' +
+            lastWeek.getMonth() +
+            '-' +
+            lastWeek.getDate()
+        );
+        $('[name=dateEnd]').val(
+          today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate()
+        );
+        break;
+      }
+      case '3': {
+        var lastMonth = new Date(
+          today.getFullYear(),
+          today.getMonth(),
+          today.getDate() - 30
+        );
+        $('[name=dateStart]').val(
+          lastMonth.getFullYear() +
+            '-' +
+            lastMonth.getMonth() +
+            '-' +
+            lastMonth.getDate()
+        );
+        $('[name=dateEnd]').val(
+          today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate()
+        );
+        break;
+      }
+      case '4': {
+        var lastYear = new Date(
+          today.getFullYear(),
+          today.getMonth(),
+          today.getDate() - 365
+        );
+        $('[name=dateStart]').val(
+          lastYear.getFullYear() +
+            '-' +
+            lastYear.getMonth() +
+            '-' +
+            lastYear.getDate()
+        );
+        $('[name=dateEnd]').val(
+          today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate()
+        );
+        break;
+      }
+    }
   });
 
   var add_comment = function(data) {

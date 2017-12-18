@@ -1,6 +1,6 @@
 .custom-ul,
 ul:not([class]) {
-  $dimensions-marker: 8;
+  $dimensions-marker: 6;
 
   margin-left: 0;
   margin-right: 0;
@@ -9,12 +9,13 @@ ul:not([class]) {
 
   li {
     position: relative;
-    padding-left: rem(35);
+    margin-bottom: 0.2rem;
+    padding-left: rem(25);
 
     &::before {
       content: '';
       position: absolute;
-      left: rem(20);
+      left: rem(10);
       top: 0.5em;
       width: rem($dimensions-marker);
       height: rem($dimensions-marker);
