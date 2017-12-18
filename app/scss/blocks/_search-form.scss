@@ -1,5 +1,5 @@
 .search {
-  margin-top: rem(45);
+
 }
 
 .search-form {
@@ -23,6 +23,19 @@
         margin-right: 0;
       }
     }
+  }
+}
+
+.search-form .selectbox {
+  @include mq-min(840px) {
+    &::before {
+      width: rem(10 + (12 * 1.35));
+    }
+  }
+}
+.search-form select {
+  @include mq-min(840px) {
+    padding-right: rem(10 + (12 * 1.35));
   }
 }
 
