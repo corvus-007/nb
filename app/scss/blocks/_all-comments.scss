@@ -1,0 +1,142 @@
+.allComments {}
+
+.allComments .oneComment {
+  position: relative;
+  margin-bottom: 12px;
+
+  @include mq-min(568px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+.allComments .oneComment:last-of-type {
+  margin-bottom: 0;
+}
+
+.allComments .avatar {
+  flex-shrink: 0;
+  width: 60px;
+  overflow: hidden;
+  padding-right: 12px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+.allComments .cContent {
+
+  @include mq-min(568px) {
+    width: calc(100% - 60px);
+  }
+}
+
+.allComments .cContent .cInfo {
+  margin-bottom: 4px;
+
+  @include mq-max(567px) {
+    position: absolute;
+    left: 60px;
+    top: 0.7rem;
+    right: 0;
+    margin-bottom: 0;
+  }
+}
+
+.allComments .cContent .cInfo span {
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+  vertical-align: bottom;
+}
+
+.allComments .cContent .cInfo a {
+  color: #B7BBC1;
+  font-size: 11px;
+  margin-left: 12px;
+  text-decoration: none;
+  vertical-align: bottom;
+}
+
+.allComments .cContent .cMessage {
+  color: #363636;
+  margin: 4px 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 15px;
+  hyphens: auto;
+  white-space: normal;
+}
+
+.allComments .cContent .cAnswer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  color: $accent-color;
+  cursor: pointer;
+  font-size: 14px;
+  transition: $duration;
+}
+
+.allComments .cContent .cAnswer .cBtn {
+  padding-right: rem(10);
+}
+
+.allComments .cContent .cAnswer .ansverForm {
+  text-align: right;
+
+  @include mq-max(567px) {
+    margin-top: 0.5rem;
+  }
+
+  @include mq-min(568px) {
+    max-width: 360px;
+  }
+}
+
+.allComments .cContent .cAnswer .ansverForm input {
+  margin-bottom: rem(10);
+}
+
+.allComments .cContent .cAnswer .ansverForm textarea {
+  margin-bottom: rem(10);
+}
+
+.allComments .cContent .cAnswer .ansverForm button {
+  @include make-button();
+  @include --button-action();
+
+  @include mq-max(567px) {
+    width: 100%;
+  }
+}
+
+.allComments .cContent .moreComments .moreComments {
+
+  @include mq-max(567px) {
+    margin-left: rem(10);
+  }
+}
+
+// .allComments .cContent .moreComments .cContent {
+//   max-width: 680px;
+// }
+
+// .allComments .cContent .moreComments .cContent .moreComments .cContent {
+//   max-width: 620px;
+// }
+
+// .allComments .cContent .moreComments .cContent .moreComments .cContent .moreComments .cContent {
+//   max-width: 560px;
+// }
+
+// .allComments .cContent .moreComments .cContent .moreComments .cContent .moreComments .cContent .moreComments .cContent {
+//   max-width: 500px;
+// }
+
+// .allComments .cContent .news-comments-block-answer {}
+
+// .allComments .news-comments-block-text .news-comments-block-answer .add {}
+
+// .allComments .news-comments-block-text .news-comments-block-answer .aswerForm {}
