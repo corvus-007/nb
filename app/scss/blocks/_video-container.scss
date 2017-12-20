@@ -1,0 +1,10 @@
+.video-container {
+
+  text-align: center;
+
+  @include mq-max(567px) {
+    iframe {
+      width: 100%;
+    }
+  }
+}
