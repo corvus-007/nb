@@ -41,6 +41,10 @@
   flex-shrink: 0;
   flex-grow: 0;
   white-space: nowrap;
+
+  &--afisha {
+
+  }
 }
 
 .okayNav__nav--invisible .main-nav__item {
@@ -97,4 +101,31 @@
 .main-nav__item--active .main-nav__link-text {
   border-bottom-color: $accent-color;
   cursor: default;
+}
+
+.main-nav__item--afisha .main-nav__link-text {
+  position: relative;
+  padding: 3px;
+  color: #fff;
+  border: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: calc(-2.5 * 3px);
+    top: calc(-1 * 3px);
+    right: calc(-2.5 * 3px);
+    bottom: calc(-1 * 3px);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 100vw 120%;
+    border-radius: 2px;
+    animation: animatedgradient 3s ease alternate infinite;
+  }
+}
+
+@keyframes animatedgradient {
+  100% {
+    background-position: 100% 50%;
+  }
 }
