@@ -255,41 +255,44 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   $('.news-comments-form textarea').click(function() {
+    // debugger;
     if (
-      $(this)
-        .parent()
-        .parent()
-        .parent()
-        .height() == 50
+      // $(this)
+      //   .parent()
+      //   .parent()
+      //   .parent()
+      //   .height() == 50
+      $('.news-comments-form .news-comments-user').is(':hidden')
     ) {
-      $(this).css('resize', 'vertical');
-      $(this)
-        .parent()
-        .parent()
-        .parent()
-        .animate(
-          {
-            height: '138px'
-          },
-          'fast',
-          function() {
-            $(this).css('height', 'auto');
-          }
-        );
-      $(this)
-        .parent()
-        .parent()
-        .prev()
-        .animate(
-          {
-            height: '30px',
-            'margin-bottom': '12px'
-          },
-          'fast',
-          function() {
-            $(this).css('height', 'auto');
-          }
-        );
+      // $(this).css('resize', 'vertical');
+      $('.news-comments-form .news-comments-user').slideDown();
+      // $(this)
+      //   .parent()
+      //   .parent()
+      //   .parent()
+      //   .animate(
+      //     {
+      //       height: '138px'
+      //     },
+      //     'fast',
+      //     function() {
+      //       $(this).css('height', 'auto');
+      //     }
+      //   );
+      // $(this)
+      //   .parent()
+      //   .parent()
+      //   .prev()
+      //   .animate(
+      //     {
+      //       height: '30px',
+      //       'margin-bottom': '12px'
+      //     },
+      //     'fast',
+      //     function() {
+      //       $(this).css('height', 'auto');
+      //     }
+      //   );
     }
   });
 
@@ -324,10 +327,11 @@ document.addEventListener('DOMContentLoaded', function() {
     $(this)
       .parent()
       .append(
-        '<div class="ansverForm"><input placeholder="Ваше имя" type="text" value="' +
+        '<div class="ansverForm"><input class="form-control" placeholder="Ваше имя" type="text" value="' +
           $('[name="v[comment_name]"]').val() +
-          '"><textarea placeholder="Текст сообщения"></textarea><button>Комментировать</button></div>'
+          '"><textarea class="form-control" placeholder="Текст сообщения"></textarea><button>Комментировать</button></div>'
       );
+      $('.ansverForm').find('input').focus();
   });
   $('body').on('click', '.ansverForm button', function() {
     var data = {
