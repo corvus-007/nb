@@ -35,9 +35,35 @@
   max-width: rem($sidebar-banner-width);
 }
 
-.b_data {display:inline-block;}
-.b_data_1 {height:120px;width:100%;background-size:cover;background-position:50%;background-repeat:no-repeat;}
-.b_data_2 {width:300px;height:460px;}
-.b_data_3 {width:800px;height:100px;}
-.b_data_4 {width:300px;height:460px;}
-.b_data_5 {width:800px;height:100px;background-size:100%;}
+.b_data {
+  display: inline-block;
+}
+
+.b_data_1 {
+  height: 120px;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.b_data_2 {
+  width: 255px;
+  height: 395px;
+}
+
+.b_data_3 {
+  width: 800px;
+  height: 100px;
+}
+
+.b_data_4 {
+  width: 255px;
+  height: 460px;
+}
+
+.b_data_5 {
+  width: 800px;
+  height: 100px;
+  background-size: 100%;
+}
