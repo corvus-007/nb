@@ -1,0 +1,20 @@
+.start-date {
+  display: inline-block;
+  padding: rem(8) rem(14);
+  font-weight: 700;
+  font-size: rem(14);
+  line-height: 20px;
+  font-family: $secondary-font;
+  letter-spacing: 0.05em;
+  color: $white-color;
+  vertical-align: middle;
+  background-color: #2552AC;
+}
+
+.start-date__day {
+
+}
+
+.start-date__hour {
+  font-size: 1.5em;
+}
