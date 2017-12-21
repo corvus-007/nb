@@ -1,0 +1,254 @@
+.afisha {
+
+}
+
+.afisha__list {
+  @include clear-list();
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mq-min(568px) {
+    margin-bottom: rem($grid-gutter-width / -2);
+    margin-right: rem($grid-gutter-width / -2);
+  }
+}
+
+.afisha__item:not(.afisha__item--banner) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: rem($grid-gutter-width / 2);
+  line-height: 1.3;
+
+  &::before {
+    background-color: $secondary-color;
+  }
+
+  @include mq-min(568px) {
+    margin-right: rem($grid-gutter-width / 2);
+    width: calc((100% - 1 * #{rem($grid-gutter-width)}) / 2);
+  }
+
+  @include mq-min(667px) {
+    width: calc((100% - 2 * #{rem($grid-gutter-width)}) / 3);
+  }
+}
+
+.afisha__item:nth-child(-n+4) {
+  @include mq-min(568px) {
+    width: 100%;
+  }
+
+  @include mq-min(667px) {
+    width: calc((100% - #{rem($grid-gutter-width)}) / 2);
+
+    &--banner {
+      width: 100%;
+    }
+  }
+}
+
+.afisha__item--banner {
+  width: 100%;
+  margin-bottom: rem($grid-gutter-width / 2);
+  margin-right: rem($grid-gutter-width / 2);
+}
+
+.afisha__item-link {
+  position: relative;
+  flex-grow: 1;
+  display: block;
+  padding-bottom: 0.5rem;
+  color: $base-color;
+  text-decoration: none;
+  transition: $duration;
+}
+
+.afisha__item:nth-child(-n+4) .afisha__item-link {
+  padding-bottom: 0;
+  color: $white-color;
+}
+
+.afisha__item-imagebox {
+  @include make-fit-object(315, 180);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.5;
+    background-color: transparent;
+    background-image: linear-gradient(to top, $black-color, rgba($black-color, 0.1));
+    transition: background-color ($duration * 5);
+  }
+}
+
+.afisha__item-link:hover .afisha__item-imagebox::after,
+.afisha__item-link:focus .afisha__item-imagebox::after {
+  background-color: rgba($black-color, 0.1);
+}
+
+.afisha__item:nth-child(-n+4) .afisha__item-imagebox {
+  @include make-fit-object(315, 220);
+
+  @include mq-min(838px) {
+    &::before {
+      padding-top: calc(180 / 315 * 100%);
+    }
+  }
+}
+
+.afisha__item-image {
+  transition: transform ($duration * 7);
+  will-change: transform;
+}
+
+.afisha__item-link:hover .afisha__item-image,
+.afisha__item-link:focus .afisha__item-image {
+  transform: translateX(-50%) translateY(-50%) scale(1.2); // translateX, translateY задается у миксина make-fit-object
+
+  @supports (object-fit: cover) {
+    transform: scale(1.2);
+  }
+}
+
+.afisha__item-body {
+
+}
+
+.afisha__item:nth-child(-n+4) .afisha__item-body {
+  position: absolute;
+  left: rem($grid-gutter-width / 2);
+  right: rem($grid-gutter-width / 2);
+  bottom: rem($grid-gutter-width / 2);
+  z-index: 3;
+  margin: 0;
+
+  @include mq-max(567px) {
+    margin-bottom: rem(40 + (8 * 2)); // 40px две строки + (8px * 2) вертикальные отступы
+  }
+}
+
+.afisha__item-title {
+  font-size: rem(20);
+  font-weight: 800;
+
+  @include mq-min(568px) {
+    font-size: rem(18);
+  }
+}
+
+.afisha__item:nth-child(-n+4) .afisha__item-title {
+  margin-top: 0;
+  font-size: rem(21);
+
+  @include mq-max(567px) {
+    margin-bottom: 0;
+  }
+
+  @include mq-min(568px) {
+    font-size: rem(27);
+  }
+
+  @include mq-min(667px) {
+    font-size: rem(18);
+  }
+
+  @include mq-min(768px) {
+    font-size: rem(22);
+  }
+
+  @include mq-min(960px) {
+    font-size: rem(25);
+  }
+
+  @include mq-min(1280px) {
+    font-size: rem(22);
+  }
+}
+
+.afisha__item-excerpt {
+  color: $base-color;
+}
+
+.afisha__item:nth-child(-n+4) .afisha__item-excerpt {
+  display: none;
+}
+
+.afisha__item-info {
+  z-index: 3;
+  display: flex;
+
+  @include mq-min(768px) {
+    position: absolute;
+    left: rem($grid-gutter-width / 2);
+    top: rem($grid-gutter-width / 2);
+  }
+}
+
+.afisha__item:nth-child(-n+4) .afisha__item-info {
+  @include mq-min(568px) {
+    position: absolute;
+    left: rem($grid-gutter-width / 2);
+    top: rem($grid-gutter-width / 2);
+  }
+}
+
+.afisha__item-start-date {
+  flex-grow: 1;
+}
+
+.afisha__item-age-limit {
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: rem(8) rem(14);
+  font-weight: 700;
+  font-size: rem(17);
+  line-height: 20px;
+  font-family: $secondary-font;
+  letter-spacing: 0.05em;
+  color: $white-color;
+  background-color: darken(#2552AC, 5%);
+  vertical-align: middle;
+
+  @include mq-min(768px) {
+    transform: translateX(-100%);
+    transition: transform $duration * 1.5;
+  }
+}
+
+.afisha__item-link:hover .afisha__item-age-limit,
+.afisha__item-link:focus .afisha__item-age-limit {
+
+  @include mq-min(768px) {
+    transform: translateX(0);
+  }
+}
+
+.afisha__item-rubric {
+  position: absolute;
+  top: rem($grid-gutter-width / 2);
+  right: rem($grid-gutter-width / 2);
+  z-index: 3;
+}
+
+.afisha__item-date {
+  color: $base-color;
+
+  @include mq-max(567px) {
+    display: none;
+  }
+}
+
+.afisha__item:nth-child(-n+4) .afisha__item-date {
+  color: $white-color;
+}
