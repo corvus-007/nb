@@ -5,16 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
     locale: 'ru'
   });
 
-  $('.sticky-banners').stick_in_parent({
-    parent: '.js-parent-sticky-sidebar-banners',
-    offset_top: 56
-  });
-
-  $(document.body).trigger('sticky_kit:recalc');
-
-  if (window.matchMedia('(max-width: 1279px)').matches) {
-    $('.sticky-banners').trigger('sticky_kit:detach');
+  function changeStateStickyBanners() {
+    if (window.matchMedia('(min-width: 1278px)').matches) {
+      $('.sticky-banners').stick_in_parent({
+        parent: '.js-parent-sticky-sidebar-banners',
+        offset_top: 56
+      });
+    }
   }
+
+  changeStateStickyBanners();
 
   if ($('.feed-news__list').length) {
     var getLentaNews = function() {
@@ -29,10 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             $('.feed-news__list').html(result['html'][0]);
             // $('.lenta-tabs .tabs-contents .tabs-contents-tab').eq(1).append(result['html'][1]);
 
-            $('.sticky-banners').stick_in_parent({
-              parent: '.js-parent-sticky-sidebar-banners',
-              offset_top: 56
-            });
+            changeStateStickyBanners();
           }
         }
       });
@@ -115,6 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
       success: function($result) {
         if ($result['status'] == 1) {
           switch (type) {
+            case 'category': {
+            }
             case 'polls': {
             }
             case 'search': {
@@ -127,15 +126,13 @@ document.addEventListener('DOMContentLoaded', function() {
               // obj.before($result['html']);
               obj
                 .parent()
-                .find('.search-output__list')
+                .find('ul')
                 .append($result['html']);
               break;
             }
             case 'page': {
             }
             case 'news': {
-            }
-            case 'category': {
             }
             case 'multimedia': {
             }
@@ -255,44 +252,22 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   $('.news-comments-form textarea').click(function() {
-    // debugger;
-    if (
-      // $(this)
-      //   .parent()
-      //   .parent()
-      //   .parent()
-      //   .height() == 50
-      $('.news-comments-form .news-comments-user').is(':hidden')
-    ) {
-      // $(this).css('resize', 'vertical');
+    // if ($(this).parent().parent().parent().height() == 50) {
+    //     $(this).css('resize', 'vertical');
+    //     $(this).parent().parent().parent().animate({
+    //         height: '138px'
+    //     }, 'fast', function() {
+    //         $(this).css('height', 'auto');
+    //     });
+    //     $(this).parent().parent().prev().animate({
+    //         height: '30px',
+    //         'margin-bottom': '12px'
+    //     }, 'fast', function() {
+    //         $(this).css('height', 'auto');
+    //     });
+    // }
+    if ($('.news-comments-form .news-comments-user').is(':hidden')) {
       $('.news-comments-form .news-comments-user').slideDown();
-      // $(this)
-      //   .parent()
-      //   .parent()
-      //   .parent()
-      //   .animate(
-      //     {
-      //       height: '138px'
-      //     },
-      //     'fast',
-      //     function() {
-      //       $(this).css('height', 'auto');
-      //     }
-      //   );
-      // $(this)
-      //   .parent()
-      //   .parent()
-      //   .prev()
-      //   .animate(
-      //     {
-      //       height: '30px',
-      //       'margin-bottom': '12px'
-      //     },
-      //     'fast',
-      //     function() {
-      //       $(this).css('height', 'auto');
-      //     }
-      //   );
     }
   });
 
@@ -331,7 +306,6 @@ document.addEventListener('DOMContentLoaded', function() {
           $('[name="v[comment_name]"]').val() +
           '"><textarea class="form-control" placeholder="Текст сообщения"></textarea><button>Комментировать</button></div>'
       );
-      $('.ansverForm').find('input').focus();
   });
   $('body').on('click', '.ansverForm button', function() {
     var data = {
@@ -352,4 +326,67 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     add_comment(data);
   });
+
+  $('.archive-year select').change(function() {
+    var $year = $(this).val();
+
+    if ($('.archive-rubric select').val() == 'all')
+      window.location.href = '/' + $year + '/';
+    else
+      window.location.href =
+        '/' + $year + '/archivecat/' + $('.archive-rubric select').val();
+  });
+
+  $('.archive-rubric select').change(function() {
+    var $rubric = $(this).val();
+
+    if ($rubric == 'all')
+      window.location.href = '/' + $('.archive-year select').val() + '/';
+    else
+      window.location.href =
+        '/' + $('.archive-year select').val() + '/archivecat/' + $rubric;
+  });
+
+  $('.day-rubric select').change(function() {
+    var $rubric = $(this).val();
+
+    if ($rubric != 'all') {
+      $('.day-content-block').each(function() {
+        if ($(this).hasClass($rubric))
+          $(this).slideDown(400, function() {
+            $(this)
+              .addClass('_show')
+              .removeAttr('style');
+          });
+        if (!$(this).hasClass($rubric))
+          $(this).slideUp(400, function() {
+            $(this)
+              .removeClass('_show')
+              .removeAttr('style');
+          });
+      });
+    } else {
+      $('.day-content-block').each(function() {
+        $(this).slideDown(400, function() {
+          $(this)
+            .addClass('_show')
+            .removeAttr('style');
+        });
+      });
+    }
+    if ($('.day-content').data('isArchive') == '1') {
+      $uri = $('.day-content').data('day');
+      if ($rubric != 'all') $uri += 'dailycat/' + $rubric + '/';
+
+      history.pushState(null, null, $uri);
+
+      $('#mainmenu .menu li').removeClass('_active');
+      $('#mainmenu .menu li[data-category="' + $rubric + '"]').addClass(
+        '_active'
+      );
+    }
+  });
+
+  if ($('.day-rubric select option:selected').val() != 'all')
+    $('.day-rubric select').change();
 });
