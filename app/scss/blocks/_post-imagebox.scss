@@ -1,5 +1,5 @@
 .post-imagebox {
-  @include make-fit-object(935, 430);
+  @include make-fit-object(800, 500);
 
   margin-bottom: rem(30);
   background-color: rgba($black-color, 0.1);
@@ -14,12 +14,6 @@
     z-index: 2;
     opacity: 0.5;
     background-image: linear-gradient(to top, $black-color, rgba($black-color, 0) 70%);
-  }
-
-  @include mq-max(567px) {
-    &::before {
-      padding-top: calc(530 / 935 * 100%);
-    }
   }
 }
 
