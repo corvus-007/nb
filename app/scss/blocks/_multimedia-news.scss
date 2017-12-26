@@ -83,12 +83,18 @@
       z-index: 2;
       opacity: 0.5;
       background-image: linear-gradient(to top, $black-color, rgba($black-color, 0));
+      pointer-events: none;
     }
   }
 }
 
 .multimedia-news__item-imagebox {
   @include make-fit-object(282, 150);
+
+  &::before,
+  &::after {
+    pointer-events: none;
+  }
 
   &::before {
     background-color: $black-color;

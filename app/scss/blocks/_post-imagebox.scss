@@ -4,6 +4,11 @@
   margin-bottom: rem(30);
   background-color: rgba($black-color, 0.1);
 
+  &::before,
+  &::after {
+    pointer-events: none;
+  }
+
   &::after {
     content: "";
     position: absolute;

@@ -54,9 +54,9 @@
   text-decoration: none;
   transition: $duration;
 
-  &:hover,
-  &:focus {
-    color: $white-color;
+  &::before,
+  &::after {
+    pointer-events: none;
   }
 
   &::before {
@@ -69,6 +69,11 @@
     z-index: 2;
     opacity: 0.5;
     background-image: linear-gradient(to top, $black-color, rgba($black-color, 0));
+  }
+
+  &:hover,
+  &:focus {
+    color: $white-color;
   }
 }
 
