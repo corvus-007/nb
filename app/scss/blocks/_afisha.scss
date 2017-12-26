@@ -110,7 +110,9 @@
 }
 
 .afisha__item-link:hover .afisha__item-image,
-.afisha__item-link:focus .afisha__item-image {
+.afisha__item-link:focus .afisha__item-image,
+.afisha__item:nth-child(-n+4):hover .afisha__item-image,
+.afisha__item:nth-child(-n+4):focus .afisha__item-image {
   transform: translateX(-50%) translateY(-50%) scale(1.2); // translateX, translateY задается у миксина make-fit-object
 
   @supports (object-fit: cover) {
@@ -202,10 +204,10 @@
 
 .afisha__item-start-date {
   flex-grow: 1;
+  z-index: 2;
 }
 
 .afisha__item-age-limit {
-  z-index: -1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -221,6 +223,8 @@
   vertical-align: middle;
 
   @include mq-min(768px) {
+    opacity: 0;
+    z-index: 1;
     transform: translateX(-100%);
     transition: transform $duration * 1.5;
   }
