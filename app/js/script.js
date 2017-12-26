@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  changeStateStickyBanners();
-
   if ($('.feed-news__list').length) {
     var getLentaNews = function() {
       $.ajax({
@@ -28,8 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // $('.lenta-tabs .tabs-contents .side-news-block').remove();
             $('.feed-news__list').html(result['html'][0]);
             // $('.lenta-tabs .tabs-contents .tabs-contents-tab').eq(1).append(result['html'][1]);
-
-            changeStateStickyBanners();
           }
         }
       });
@@ -302,9 +298,9 @@ document.addEventListener('DOMContentLoaded', function() {
     $(this)
       .parent()
       .append(
-        '<div class="ansverForm"><input class="form-control" placeholder="Ваше имя" type="text" value="' +
+        '<div class="ansverForm"><input placeholder="Ваше имя" type="text" value="' +
           $('[name="v[comment_name]"]').val() +
-          '"><textarea class="form-control" placeholder="Текст сообщения"></textarea><button>Комментировать</button></div>'
+          '"><textarea placeholder="Текст сообщения"></textarea><button>Комментировать</button></div>'
       );
   });
   $('body').on('click', '.ansverForm button', function() {
@@ -389,4 +385,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if ($('.day-rubric select option:selected').val() != 'all')
     $('.day-rubric select').change();
+
+  // $('.post-content p > img').each(function() {
+  //     $(this).removeAttr('style');
+  /*        $(this).after('<span class="_sign">'+(($(this).attr('title'))?$(this).attr('title').replace(new RegExp('/&amp;/g'),'&').replace(new RegExp('/&lt;/g'),'<').replace(new RegExp('/&gt;/g'),'>').replace(new RegExp('/&quot;/g'),'"'):'&nbsp')+'</span>');
+        $(this).removeAttr('title');
+        $(this).parent().addClass('pimage');
+        if ($(this).hasClass('l') || $(this).hasClass('r')) {
+            $(this).parent().addClass(($(this).hasClass('r'))?'r':'l');
+            $(this).removeClass('l').removeClass('r');
+        }*/
+  // });
 });
