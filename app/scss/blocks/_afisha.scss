@@ -223,7 +223,6 @@
   vertical-align: middle;
 
   @include mq-min(768px) {
-    opacity: 0;
     z-index: 1;
     transform: translateX(-100%);
     transition: transform $duration * 1.5;
