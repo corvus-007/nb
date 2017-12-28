@@ -4,6 +4,11 @@
   background-color: $secondary-color;
 }
 
+.main-header--new-year .navbar__wrapper {
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+}
+
 .navbar {
   top: 0;
   left: 0;
