@@ -70,6 +70,7 @@ gulp.task('modules-js', function() {
     .src([
       'app/js/modules/util.js',
       'app/js/modules/searchbar.js',
+      'app/js/modules/feed-news.js',
       'app/js/modules/navbar.js',
       'app/js/modules/out-cover.js',
       'app/js/modules/search-form.js',

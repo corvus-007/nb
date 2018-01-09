@@ -2,6 +2,10 @@
 
 }
 
+.main-grid__column-main .feed-news {
+  margin-bottom: 0;
+}
+
 .feed-news__list {
   @include clear-list();
 }
