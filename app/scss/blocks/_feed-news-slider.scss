@@ -1,0 +1,31 @@
+.feed-news-slider {
+  margin-bottom: rem(15);
+
+  .slick-arrow {
+    @include make-button();
+
+    width: 100%;
+    height: rem(26);
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: rem(30);
+    transition: ($duration * 2);
+
+    &.slick-disabled {
+      opacity: 0.1;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  .slick-prev {
+    background-image: url("../images/arrow-up.svg");
+  }
+
+  .slick-next {
+    background-image: url("../images/arrow-down.svg");
+  }
+}
