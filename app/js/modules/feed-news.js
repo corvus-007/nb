@@ -1,9 +1,31 @@
 window.feedNews = (function() {
   'use strict';
 
-  var moveFeedNewsToMain = function() {
-    var feedNews = document.querySelector('.feed-news');
+  var feedNews = document.querySelector('.feed-news');
+  var slider = document.querySelector('.feed-news-slider');
 
+  var sliderOptions = {
+    accessibility: false,
+    slidesToShow: 7,
+    slidesToScroll: 7,
+    speed: 800,
+    infinite: false,
+    vertical: true,
+    prevArrow:
+      '<button class="slick-prev" aria-label="Новые" type="button"></button>',
+    nextArrow:
+      '<button class="slick-next" aria-label="Старые" type="button"></button>'
+  };
+
+  var initSlider = function() {
+    $(slider).slick(sliderOptions);
+  };
+
+  var destroySlider = function() {
+    $(slider).slick('unslick');
+  };
+
+  var moveFeedNewsToMain = function() {
     if (feedNews) {
       var mainGridColumn = document.querySelector('.main-grid__column-main');
       var sectionTopNews = mainGridColumn.querySelector('.section-top-news');
@@ -34,4 +56,10 @@ window.feedNews = (function() {
   window.addEventListener('resize', updatePlaceFeedNews);
 
   updatePlaceFeedNews();
+
+  return {
+    slider: slider,
+    initSlider: initSlider,
+    destroySlider: destroySlider
+  };
 })();
