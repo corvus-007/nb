@@ -53,6 +53,7 @@ gulp.task('plugins-js', function() {
       'app/js/plugins/svg4everybody.js',
       'app/js/plugins/imagesloaded.pkgd.min.js',
       'app/js/plugins/okayNav.js',
+      'app/js/plugins/slick.js',
       // 'app/js/plugins/jquery.sticky.js',
       'app/js/plugins/sticky-kit.min.js',
       'app/js/plugins/flatpickr.min.js',
