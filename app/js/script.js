@@ -16,10 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if ($('.feed-news__list').length) {
     var getLentaNews = function() {
-      if ('destroySlider' in window.feedNews.slider) {
-        window.feedNews.destroySlider();
-      }
-
       $.ajax({
         url: '/index.php?v[mode]=site&v[action]=reload_lenta_news',
         type: 'post',
@@ -28,9 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
         success: function(result) {
           if (result['status'] == 1) {
             // $('.lenta-tabs .tabs-contents .side-news-block').remove();
+            if (window.feedNews.isFireFeedNews) {
+              window.feedNews.destroySlider();
+            }
             $('.feed-news__list').html(result['html'][0]);
-            // $('.lenta-tabs .tabs-contents .tabs-contents-tab').eq(1).append(result['html'][1]);
             window.feedNews.initSlider();
+            window.feedNews.isFireFeedNews = true;
+            // $('.lenta-tabs .tabs-contents .tabs-contents-tab').eq(1).append(result['html'][1]);
           }
         }
       });

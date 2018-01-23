@@ -60,6 +60,7 @@ window.feedNews = (function() {
   return {
     slider: slider,
     initSlider: initSlider,
-    destroySlider: destroySlider
+    destroySlider: destroySlider,
+    isFireFeedNews: false
   };
 })();
