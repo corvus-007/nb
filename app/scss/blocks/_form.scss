@@ -41,6 +41,10 @@
     background: #fff;
   }
 
+  &.error {
+    border-color: $danger-color;
+  }
+
   @include mq-min(840px) {
     &--small {
       padding-top: rem(5);
@@ -72,4 +76,9 @@ textarea.form-control {
   p {
     margin-bottom: 0;
   }
+}
+
+label.error {
+  color: $danger-color;
+  font-size: 13px;
 }
