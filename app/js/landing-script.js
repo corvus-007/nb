@@ -4,7 +4,7 @@ $(function() {
   var partnersSlider = document.querySelector('.landing-partners-slider');
   var landingCoachesSlider = document.querySelector('.landing-coaches-slider');
 
-  $('[type="tel"]').mask('+7 (999) 999-99-99', {autoclear: false});
+  $('[type="tel"]').mask('+7 (999) 999-99-99', { autoclear: false });
   $.validator.addMethod(
     'customphone',
     function(value, element) {
@@ -16,7 +16,7 @@ $(function() {
     'Пожалуйста, введите правильный номер телефона'
   );
 
-  $('#fintess-request-form').validate({
+  $('#fitness-request-form').validate({
     submitHandler: function(form) {
       var data = $(form).serialize();
       $.ajax({
@@ -27,11 +27,15 @@ $(function() {
         success: function(result) {
           if (result['status'] == '1') {
             $.fancybox.close(true);
-            $.fancybox.open('<div class="popup"><h2 class="popup__title">Ошибка!</h2><p>Обновите страницу и попробуйте снова.</p></div>');
+            $.fancybox.open(
+              '<div class="popup"><h2 class="popup__title">Ошибка!</h2><p>Обновите страницу и попробуйте снова.</p></div>'
+            );
           } else {
             form.reset();
             $.fancybox.close(true);
-            $.fancybox.open('<div class="popup"><h2 class="popup__title">Ваша анкета отправлена!</h2><p>С вами свяжутся организаторы конкурса.</p></div>');
+            $.fancybox.open(
+              '<div class="popup"><h2 class="popup__title">Ваша анкета отправлена!</h2><p>С вами свяжутся организаторы конкурса.</p></div>'
+            );
           }
         }
       });
