@@ -15,3 +15,16 @@
     width: 1300px;
   }
 }
+
+@mixin make-slim-container($gutter: $grid-gutter-width) {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  box-sizing: border-box;
+
+  @include mq-min(860px) {
+    width: 770px;
+  }
+}
