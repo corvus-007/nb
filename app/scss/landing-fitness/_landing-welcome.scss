@@ -1,0 +1,132 @@
+.landing-welcome {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: $secondary-color;
+  background: #0d161d url("../images/landing-fitness/head_image.jpg") no-repeat right / cover;
+  overflow: hidden;
+
+  @include mq-max(567px) {
+    min-height: 70vh;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  @media (min-height: 920px) {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  @media (min-height: 800px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.landing-welcome__wrapper {
+  @include make-container();
+}
+
+.landing-welcome__slogan {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: 900;
+  font-size: 21px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background-image: repeating-linear-gradient(-45deg, rgba(#fff, 0.25) 0, rgba(#fff, 0.25) 1px, rgba(#fff, 0) 1px, rgba(#fff, 0) 5px);
+
+  @include mq-max(567px) {
+    margin-bottom: 2rem;
+  }
+
+  @media (min-height: 920px) {
+    margin-bottom: 2rem;
+  }
+
+  @include mq-min(1024px) {
+    margin-left: 70px;
+  }
+
+  @media (min-height: 920px) {
+    margin-bottom: 2rem;
+  }
+}
+
+.landing-welcome__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 1;
+  color: $fitness-accent;
+  text-transform: uppercase;
+  mix-blend-mode: lighten;
+
+  @include mq-max(567px) {
+    margin-bottom: 2.5rem;
+  }
+
+  @include mq-min(667px) {
+    font-size: 60px;
+    max-width: 500px;
+  }
+
+  @include mq-min(1024px) {
+    margin-left: 70px;
+    font-size: 108px;
+  }
+
+  @media (min-height: 960px) {
+    margin-bottom: 3rem;
+  }
+}
+
+.landing-welcome__button {
+  @include mq-min(1024px) {
+    margin-left: 70px;
+  }
+}
+
+.landing-welcome__line-items {
+  position: absolute;
+  top: 0;
+  left: 55%;
+  height: 100%;
+  width: 10%;
+  transform: translateX(-100%) skew(-45deg);
+  border-left: 1px solid rgba($white-color, 0.6);
+  border-right: 1px solid rgba($white-color, 0.4);
+  pointer-events: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30%;
+    width: 1px;
+    border-left: 2px solid rgba($white-color, 0.8);
+  }
+}
+
+.landing-welcome__strip {
+  position: absolute;
+  top: 0;
+  left: 80%;
+  width: 30vw;
+  height: 100%;
+  transform: translateX(0%) skew(-45deg);
+  background-color: $fitness-accent;
+  pointer-events: none;
+  will-change: background-position;
+  mix-blend-mode: lighten;
+
+  @include mq-min(568px) {
+    left: 60%;
+  }
+}

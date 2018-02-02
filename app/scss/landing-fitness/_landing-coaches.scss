@@ -1,0 +1,62 @@
+.landing-coaches {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  background-color: #0d141c;
+  color: $white-color;
+
+  @include mq-min(768px) {
+    padding-top: 110px;
+    padding-bottom: 80px;
+  }
+}
+
+.landing-coaches__wrapper {
+  @include make-container();
+}
+
+.landing-coaches__title {
+  max-width: 610px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  font-weight: 900;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+  color: $fitness-accent;
+
+  span {
+    display: block;
+    color: $white-color;
+  }
+
+  @include mq-min(568px) {
+    font-size: 30px;
+  }
+
+  @include mq-min(768px) {
+    font-size: 37px;
+  }
+}
+
+.landing-coaches__list {
+  @include clear-list();
+
+  @include mq-min(1024px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.landing-coaches__item {
+  @include mq-min(1024px) {
+    max-width: none;
+    width: calc((100% - 50px * 2) / 3);
+    margin-right: 50px;
+    margin-bottom: 40px;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}

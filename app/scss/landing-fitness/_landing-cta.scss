@@ -1,0 +1,72 @@
+.landing-cta {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: $secondary-color;
+  background: #0d161d url("../images/landing-fitness/footer_image.jpg") no-repeat right / cover;
+  overflow: hidden;
+
+  @include mq-max(991px) {
+    text-align: center;
+  }
+
+  @include mq-min(1024px) {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+
+  @media (min-height: 920px) {
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
+}
+
+.landing-cta__wrapper {
+  @include make-container();
+}
+
+.landing-cta__title {
+  margin: 0;
+  margin-bottom: 70px;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 1;
+  color: $fitness-accent;
+  text-transform: uppercase;
+
+  @include mq-min(667px) {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 55px;
+  }
+
+  @include mq-min(768px) {
+    max-width: 610px;
+  }
+
+  @include mq-min(992px) {
+    margin-left: 70px;
+    font-size: 108px;
+  }
+}
+
+.landing-cta__button-wrapper {
+  display: inline-block;
+  text-align: center;
+
+  @include mq-min(992px) {
+    margin-left: 70px;
+  }
+}
+
+.landing-cta__button {
+
+}
+
+.landing-cta__button-note {
+  margin: 0;
+  margin-top: 0.5rem;
+
+  small {
+    font-size: 18px;
+  }
+}

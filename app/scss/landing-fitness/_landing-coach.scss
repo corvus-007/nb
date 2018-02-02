@@ -1,0 +1,68 @@
+.landing-coach {
+  text-align: center;
+}
+
+.landing-coach__photobox {
+
+}
+
+.landing-coach__photo {
+  border-radius: 50%;
+}
+
+.landing-coach__body {
+  margin-top: -15px;
+}
+
+.landing-coach__name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 24px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.landing-coach__firstname {
+  position: relative;
+  z-index: 1;
+  min-width: 111px;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  color: $white-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $fitness-accent;
+    transform: rotate(-4deg);
+  }
+}
+
+.landing-coach__lastname {
+  z-index: 2;
+  min-width: 140px;
+  margin-top: -2px;
+  padding: 0 0.5rem;
+  color: #0d141c;
+  box-sizing: border-box;
+  background-color: $fitness-accent-2;
+}
+
+.landing-coach__decription {
+  @include clear-mr-edges-elem();
+
+  font-size: 16.5px;
+
+  @include mq-min(768px) {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

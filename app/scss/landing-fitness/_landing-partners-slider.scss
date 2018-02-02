@@ -1,0 +1,33 @@
+@include mq-max(767px) {
+  .landing-partners-slider {
+
+  }
+
+  .landing-partners-slider .slick-track {
+    display: flex;
+    align-items: center;
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
+  .landing-partners-slider .slick-slide {
+    transform: scale(0.8);
+    transition: transform ($duration * 2);
+  }
+
+  .landing-partners-slider .slick-active {
+    transform: scale(1);
+  }
+
+  .landing-partners-slider__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

@@ -1,0 +1,36 @@
+.landing-partners {
+  padding-top: $grid-gutter-width;
+  padding-bottom: $grid-gutter-width;
+  background-color: $secondary-color;
+}
+
+.landing-partners__wrapper {
+  @include make-container();
+}
+
+.landing-partners__list {
+  @include clear-list();
+
+  @include mq-min(768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.landing-partners__item {
+  @include mq-min(768px) {
+    margin-right: 3rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.landing-partners__link {
+  display: block;
+}
+
+.landing-partners__image {
+}

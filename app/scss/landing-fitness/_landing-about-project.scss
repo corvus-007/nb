@@ -1,0 +1,55 @@
+.landing-about-project {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  color: $white-color;
+  background: #0c151e url("../images/landing-fitness/about_image.jpg") no-repeat center / cover;
+  overflow: hidden;
+
+  @media (min-height: 920px) {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+}
+
+.landing-about-project__strip {
+  position: absolute;
+  top: 0;
+  left: 53%;
+  width: 33vw;
+  max-width: 330px;
+  height: 100%;
+  transform: translateX(-50%) skewX(20deg);
+  background-color: $fitness-accent-2;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+
+.landing-about-project__wrapper {
+  @include make-slim-container();
+
+  position: relative;
+}
+
+.landing-about-project__title {
+  margin: 0;
+  margin-bottom: 50px;
+  font-weight: 900;
+  font-size: 37px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.landing-about-project__text {
+  font-size: 21px;
+  text-align: center;
+  font-weight: 400;
+
+  & > :not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

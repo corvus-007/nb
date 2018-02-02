@@ -1,0 +1,76 @@
+.landing-button-action {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0;
+  min-width: 295px;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1;
+  font-family: $secondary-font;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  color: $black-color;
+  background-color: $fitness-accent-2;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color $duration;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    transform-origin: 0 0;
+    transform: rotate(-2deg);
+    background-color: $fitness-accent;
+    transition: $duration * 1.2;
+  }
+
+  &:hover,
+  &:focus {
+    color: $black-color;
+    background-color: lighten($fitness-accent-2, 15%);
+
+    &::before {
+      transform-origin: 80% 80%;
+      transform: rotate(1.2deg);
+    }
+  }
+
+  &:active {
+    background-color: darken($fitness-accent-2, 2%);
+
+    &::before{
+      transform-origin: 50%;
+      transform: scale(0.8);
+    }
+  }
+
+  &--big {
+    font-size: 30px;
+  }
+
+  @include mq-min(992px) {
+    &--big {
+      min-width: 500px;
+      font-size: 50px;
+    }
+  }
+}
+
+.landing-button-action__text {
+  position: relative;
+  display: block;
+  padding: 17px;
+  background-color: inherit;
+}
+
+.landing-button-action--big .landing-button-action__text {
+  padding: 25px;
+}
