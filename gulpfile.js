@@ -17,7 +17,7 @@ var del = require('del');
 
 gulp.task('style', function() {
   return (gulp
-      .src('app/scss/style.scss')
+      .src(['app/scss/style.scss', '!app/scss/landing-fitness/'])
       .pipe(
         plumber({
           errorHandler: function(err) {
@@ -47,6 +47,37 @@ gulp.task('style', function() {
       .pipe(browserSync.stream()) );
 });
 
+gulp.task('landing-fitness-style', function() {
+  return gulp
+    .src('app/scss/landing.scss')
+    .pipe(
+      plumber({
+        errorHandler: function(err) {
+          console.log(err);
+        }
+      })
+    )
+    .pipe(
+      sass
+        .sync({
+          outputStyle: 'expanded'
+        })
+        .on('error', sass.logError)
+    )
+    .pipe(
+      postcss([
+        autoprefixer({
+          browsers: ['last 2 version']
+        }),
+        mqpacker({
+          sort: true
+        })
+      ])
+    )
+    .pipe(gulp.dest('build/css'))
+    .pipe(browserSync.stream());
+});
+
 gulp.task('plugins-js', function() {
   gulp
     .src([
@@ -54,6 +85,10 @@ gulp.task('plugins-js', function() {
       'app/js/plugins/imagesloaded.pkgd.min.js',
       'app/js/plugins/okayNav.js',
       'app/js/plugins/slick.js',
+      'app/js/plugins/jquery.fancybox.js',
+      'app/js/plugins/jquery.validate.min.js',
+      'app/js/plugins/messages_ru.js',
+      'app/js/plugins/jquery.maskedinput.min.js',
       // 'app/js/plugins/jquery.sticky.js',
       'app/js/plugins/sticky-kit.min.js',
       'app/js/plugins/flatpickr.min.js',
@@ -143,6 +178,7 @@ gulp.task('build', function(fn) {
     'clean',
     'copy',
     'style',
+    'landing-fitness-style',
     'plugins-js',
     'modules-js',
     'copy-script',
@@ -161,6 +197,11 @@ gulp.task('serve', function() {
   gulp.watch('app/scss/**/*.scss', function() {
     setTimeout(function() {
       gulp.start('style');
+    }, 500);
+  });
+  gulp.watch('app/scss/landing-fitness/**/*.scss', function() {
+    setTimeout(function() {
+      gulp.start('landing-fitness-style');
     }, 500);
   });
   gulp.watch('app/images/**/*', ['copy-images']);
