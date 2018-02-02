@@ -124,6 +124,26 @@
   }
 }
 
+.main-nav__item--fitness-challenge .main-nav__link-text {
+  position: relative;
+  padding: 3px;
+  color: $white-color;
+  background-color: $fitness-accent;
+  border: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: calc(-2.5 * 3px);
+    top: calc(-1 * 3px);
+    right: calc(-2.5 * 3px);
+    bottom: calc(-1 * 3px);
+    background-color: $fitness-accent;
+    border-radius: 2px;
+  }
+}
+
 @keyframes animatedgradient {
   100% {
     background-position: 100% 50%;
