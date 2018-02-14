@@ -1,3 +1,57 @@
+var stat = {
+  VARS: {},
+  EVENTS: function() {
+    $('body').on('click', '.b_data', function() {
+      return stat.FUNCTIONS.bannerFrame($(this));
+    });
+  },
+  FUNCTIONS: {
+    bannerFrame: function($obj) {
+      var stat = {
+        host: location.hostname,
+        path: location.pathname,
+        page_type: $('#contentType').val(),
+        page_val: $('#contentId').val(),
+        user_id: $('#userId').val()
+      };
+
+      if (typeof $obj == 'string') {
+        stat.val = $('body iframe[name="' + $obj + '"]').data('val');
+        stat.type = '2';
+        stat.href = $('body iframe[name="' + $obj + '"]').data('href');
+        stat.text = $('body iframe[name="' + $obj + '"]').data('alt');
+      } else if ($obj.is('a')) {
+        if (
+          $obj.hasClass('bx-prev') ||
+          $obj.hasClass('bx-next') ||
+          $obj
+            .parent()
+            .parent()
+            .hasClass('bxslider')
+        )
+          return true;
+        stat.img = '';
+        stat.type = '1';
+        stat.href = $obj.attr('href');
+        stat.text = $obj.text();
+      } else if ($obj.is('img') || $obj.is('div')) {
+        stat.val = $obj.attr('data-val');
+        stat.type = '2';
+        stat.href = $obj.parents('a').attr('href');
+        stat.text = $obj.attr('alt');
+      }
+
+      $.ajax({
+        url: '/index.php?v[mode]=site&v[action]=b_data',
+        async: false,
+        data: { v: { stat: stat } }
+      });
+
+      return true;
+    }
+  }
+};
+var banners = {};
 document.addEventListener('DOMContentLoaded', function() {
   svg4everybody();
 
@@ -13,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   }
+
+  changeStateStickyBanners();
 
   if ($('.feed-news__list').length) {
     var getLentaNews = function() {
@@ -394,11 +450,70 @@ document.addEventListener('DOMContentLoaded', function() {
   // $('.post-content p > img').each(function() {
   //     $(this).removeAttr('style');
   /*        $(this).after('<span class="_sign">'+(($(this).attr('title'))?$(this).attr('title').replace(new RegExp('/&amp;/g'),'&').replace(new RegExp('/&lt;/g'),'<').replace(new RegExp('/&gt;/g'),'>').replace(new RegExp('/&quot;/g'),'"'):'&nbsp')+'</span>');
-        $(this).removeAttr('title');
-        $(this).parent().addClass('pimage');
-        if ($(this).hasClass('l') || $(this).hasClass('r')) {
-            $(this).parent().addClass(($(this).hasClass('r'))?'r':'l');
-            $(this).removeClass('l').removeClass('r');
-        }*/
+     $(this).removeAttr('title');
+     $(this).parent().addClass('pimage');
+     if ($(this).hasClass('l') || $(this).hasClass('r')) {
+     $(this).parent().addClass(($(this).hasClass('r'))?'r':'l');
+     $(this).removeClass('l').removeClass('r');
+     }*/
   // });
+
+  /* ротация баннеров */
+  banners.rotate = function() {
+    $('.rotateBannerSettings').each(function() {
+      var banners = JSON.parse($(this).val());
+      var place_id = $(this).attr('data-place');
+      var i = Math.floor(Math.random() * banners.length);
+      // console.log(banners[i]['image'], $('.b_data_' + place_id).attr('src'));
+      while (banners[i]['image'] == $('.b_data_' + place_id).attr('src')) {
+        i = Math.floor(Math.random() * banners.length);
+        // console.log(i);
+      }
+      var html = '';
+      if (banners[i]['type'] == 1) {
+        html =
+          banners[i]['html'] +
+          '<a href="' +
+          banners[i]['url'] +
+          '" target="' +
+          banners[i]['target'] +
+          '"><img class="b_data b_data_' +
+          place_id +
+          '" data-val="' +
+          banners[i]['id'] +
+          '" src="' +
+          banners[i]['image'] +
+          '" alt="' +
+          banners[i]['alt'] +
+          '"></a>';
+      } else if (banners[i]['type'] == 2) {
+        html =
+          banners[i]['html'] +
+          '<iframe class="b_data b_data_' +
+          place_id +
+          '" name="b_data_' +
+          place_id +
+          '" src="' +
+          banners[i]['image'] +
+          '" data-val="' +
+          banners[i]['id'] +
+          '" data-alt="' +
+          banners[i]['alt'] +
+          '" data-href="' +
+          banners[i]['url'] +
+          '" data-img="' +
+          banners[i]['image'] +
+          '"></iframe>';
+      }
+      $(this)
+        .parent()
+        .find('a,iframe')
+        .remove();
+      $(this)
+        .parent()
+        .prepend(html);
+    });
+  };
+  setInterval('banners.rotate()', 10000);
+  stat.EVENTS();
 });
