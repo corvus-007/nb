@@ -56,6 +56,14 @@
     font-size: 30px;
   }
 
+  &--disabled {
+    background-color: #424242;
+    color: $muted-color;
+    cursor: default;
+    filter: grayscale(100);
+    pointer-events: none;
+  }
+
   @include mq-min(992px) {
     &--big {
       min-width: 500px;
