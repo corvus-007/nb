@@ -2,7 +2,7 @@
   padding-top: 75px;
   padding-bottom: 65px;
   color: $white-color;
-  background: #0d141c url("../images/landing-fitness/features_image.jpg") no-repeat center / cover;
+  background: #0d141c url("../../images/fitnes2018/features_image.jpg") no-repeat center / cover;
 
   @media (min-height: 920px) {
     padding-top: 100px;
@@ -39,27 +39,27 @@
   }
 
   &--location::before {
-    background-image: url("../images/landing-fitness/advantages-icons/location.svg");
+    background-image: url("../../images/fitnes2018/advantages-icons/location.svg");
   }
 
   &--strong::before {
-    background-image: url("../images/landing-fitness/advantages-icons/strong.svg");
+    background-image: url("../../images/fitnes2018/advantages-icons/strong.svg");
   }
 
   &--gym::before {
-    background-image: url("../images/landing-fitness/advantages-icons/gym.svg");
+    background-image: url("../../images/fitnes2018/advantages-icons/gym.svg");
   }
 
   &--exercise::before {
-    background-image: url("../images/landing-fitness/advantages-icons/exercise.svg");
+    background-image: url("../../images/fitnes2018/advantages-icons/exercise.svg");
   }
 
   &--badge::before {
-    background-image: url("../images/landing-fitness/advantages-icons/badge.svg");
+    background-image: url("../../images/fitnes2018/advantages-icons/badge.svg");
   }
 
   &--questions::before {
-    background-image: url("../images/landing-fitness/advantages-icons/questions.svg");
+    background-image: url("../../images/fitnes2018/advantages-icons/questions.svg");
   }
 
   @include mq-range(568px, 767px) {

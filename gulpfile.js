@@ -74,7 +74,7 @@ gulp.task('landing-fitness-style', function() {
         })
       ])
     )
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('build/css/fitnes2018/'))
     .pipe(browserSync.stream());
 });
 
