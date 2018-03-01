@@ -88,7 +88,11 @@
         </div>
       </section>
 
-      <section class="member-profile-statistic"></section>
+      <section class="member-profile-statistic">
+        <div class="member-profile-statistic__wrapper">
+          <canvas class="member-profile-statistic__chart" id="member-profile-chart" width="600" height="340"></canvas>
+        </div>
+      </section>
 
       <div class="banner">
         <a href="">
@@ -355,12 +359,111 @@
       </section>
     </main>
 
-    @@include('blocks/main-footer.html') @@include('blocks/popup-fitness-request.html')
+    @@include('blocks/main-footer.html')
   </div>
   @@include('blocks/site-scripts.html')
 
-  <script src="js/landing-script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+  <script>
+    var memberProfileChartCtx = document.getElementById('member-profile-chart');
 
+  if (memberProfileChartCtx) {
+    Chart.defaults.global.defaultFontFamily = 'Akrobat';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#fff';
+
+    var memberProfileChart = new Chart(memberProfileChartCtx, {
+      type: 'line',
+      data: {
+        labels: ['Март', 'Апрель', 'Май', 'Июнь'],
+        datasets: [
+          {
+            label: 'Грудь',
+            fill: false,
+            backgroundColor: 'rgb(54, 162, 235)',
+            borderColor: 'rgb(54, 162, 235)',
+            borderWidth: 8,
+            data: [80, 86, 89]
+          },
+          {
+            label: 'Талия',
+            fill: false,
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            borderWidth: 8,
+            data: [67, 65, 62]
+          }
+        ]
+      },
+      options: {
+        layout: {
+          padding: {
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 40,
+          }
+        },
+        legendCallback: function(chart) {
+          console.log(chart);
+          chart.legend.top += 25;
+        },
+        legend: {
+          position: 'bottom',
+          labels: {
+            fontSize: 18
+          }
+        },
+        responsive: true,
+        scales: {
+          yAxes: [
+            {
+              gridLines: {
+                color: 'rgba(255, 255, 255, 0.3)',
+                zeroLineColor: 'rgba(255, 255, 255, 0.5)'
+              },
+              display: true,
+              stacked: true,
+              ticks: {
+                fontSize: 16
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Величина замера, см'
+              }
+            }
+          ],
+          xAxes: [
+            {
+              gridLines: {
+                color: 'rgba(255, 255, 255, 0.3)',
+                zeroLineColor: 'rgba(255, 255, 255, 0.7)'
+              },
+              display: true,
+              ticks: {
+                fontSize: 16
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Месяц проведения замера'
+              }
+            }
+          ]
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+          backgroundColor: 'rgba(0, 0, 0, 0.35)',
+          cornerRadius: 0,
+          caretSize: 0
+        }
+      }
+    });
+
+    memberProfileChart.generateLegend();
+  }
+  </script>
+  <script src="js/landing-script.js"></script>
 </body>
 
 </html>
