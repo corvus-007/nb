@@ -135,6 +135,20 @@
   &::before {
     content: "";
     position: absolute;
+    left: 2px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    background: url("../images/dumbbell.svg") no-repeat center;
+    background-size: contain;
+    transition: $duration;
+    opacity: 0.8;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
     z-index: -1;
     left: calc(-2.5 * 3px);
     top: calc(-1 * 3px);
@@ -143,21 +157,11 @@
     background-color: $fitness-accent;
     border-radius: 2px;
   }
-
-  svg {
-    position: absolute;
-    left: 2px;
-    top: 50%;
-    transform: translateY(-50%);
-    fill: #ffffff;
-    opacity: 0.8;
-    transition: $duration;
-  }
 }
 
 .main-nav__item--fitness-challenge:hover,
 .main-nav__item--fitness-challenge:focus {
-  svg {
+  & .main-nav__link-text::before {
     opacity: 1;
   }
 }
