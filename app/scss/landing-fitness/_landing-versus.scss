@@ -1,0 +1,192 @@
+.landing-versus {
+
+}
+
+.landing-versus__list {
+  @include clear-list();
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.landing-versus__item {
+  position: relative;
+  flex-basis: 500px;
+  flex-grow: 1;
+}
+
+.landing-versus__imagebox {
+  @include make-fit-object(640, 450);
+}
+
+.landing-versus__image {
+  filter: grayscale(100%);
+  transition: filter $duration * 5;
+
+  .landing-versus__item:hover & {
+    filter: grayscale(0%);
+  }
+}
+
+.landing-versus__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(#0d141c, 0.1), rgba(#0d141c, 0.8) 90%);
+}
+
+.landing-versus__play {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  font-size: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    background: url("../../images/fitnes2018/play.svg") no-repeat center;
+    background-size: contain;
+    transition: transform $duration * 2;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      transform: scale(1.4);
+      transition-delay: $duration * 1.5;
+    }
+  }
+}
+
+.landing-versus__vs-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  z-index: 2;
+  width: 196px;
+  height: 236px;
+  margin: auto;
+  background: url("../../images/fitnes2018/vs.png") no-repeat center;
+  background-size: contain;
+  opacity: 0.2;
+  mix-blend-mode: luminosity;
+  transition: $duration * 5;
+}
+
+.landing-versus__item:hover .landing-versus__vs-icon,
+.landing-versus__play:hover ~ .landing-versus__vs-icon,
+.landing-versus__play:focus ~ .landing-versus__vs-icon {
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+
+.landing-versus__votebar {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+
+  @include mq-min(568px) {
+    left: 50px;
+    right: 50px;
+    bottom: 25px;
+  }
+}
+
+.landing-versus__vote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.landing-versus__vote-value {
+  font-size: 50px;
+  opacity: 0;
+  transition: opacity $duration * 2;
+}
+
+.landing-versus__item:hover,
+.landing-versus__item:focus,
+.landing-versus__play:hover ~ .landing-versus__votebar,
+.landing-versus__play:focus ~ .landing-versus__votebar {
+  .landing-versus__vote-value {
+    transition-delay: $duration / 2;
+    opacity: 1;
+
+    &--coach {
+      color: $fitness-accent;
+    }
+
+    &--member {
+      color: $fitness-accent-2;
+    }
+  }
+}
+
+.landing-versus__vote-button {
+  @include make-button();
+
+  font-weight: 900;
+  font-size: 19px;
+  letter-spacing: 0;
+  border: none;
+  color: #5b6168;
+  background-color: #32383e;
+  transition: $duration * 1.5;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 1px 2px currentColor;
+  }
+
+  @include mq-min(568px) {
+    font-size: 30px;
+  }
+}
+
+.landing-versus__item:hover,
+.landing-versus__item:focus,
+.landing-versus__play:hover ~ .landing-versus__votebar ,
+.landing-versus__play:focus ~ .landing-versus__votebar {
+  .landing-versus__vote-button {
+
+    &--coach {
+      background-color: $fitness-accent;
+      color: $white-color;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 1px 2px $fitness-accent;
+      }
+    }
+
+    &--member {
+      background-color: $fitness-accent-2;
+      color: $base-color;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 1px 2px $fitness-accent-2;
+      }
+    }
+  }
+}

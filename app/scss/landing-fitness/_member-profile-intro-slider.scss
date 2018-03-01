@@ -1,0 +1,66 @@
+.member-profile-intro-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .slick-list {
+    height: 100%;
+  }
+
+  .slick-track {
+    height: 100%;
+  }
+
+  .slick-slide {
+    & * {
+      height: 100%;
+    }
+  }
+
+  .slick-dots {
+    @include clear-list();
+
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    button {
+      display: block;
+      margin: 0;
+      width: 12px;
+      height: 12px;
+      font-size: 0;
+      padding: 0;
+      border: none;
+      background-color: $white-color;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .slick-active {
+      button {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.member-profile-intro-slider__item {
+
+}

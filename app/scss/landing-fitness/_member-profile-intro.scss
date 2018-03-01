@@ -1,0 +1,197 @@
+.member-profile-intro {
+  position: relative;
+  padding-top: 250px;
+  padding-bottom: 40px;
+  overflow: hidden;
+
+  @include mq-min(568px) {
+    padding-top: 160px;
+    padding-bottom: 60px;
+  }
+
+  @include mq-min(1366px) {
+    padding-bottom: 85px;
+  }
+
+  @include mq-min(1440px) {
+    padding-bottom: 95px;
+  }
+
+  @include mq-min(1600px) {
+    padding-bottom: 105px;
+  }
+
+  @include mq-min(1920px) {
+    padding-bottom: 115px;
+  }
+}
+
+.member-profile-intro__wrapper {
+  @include make-container();
+
+  position: relative;
+}
+
+.member-profile-intro__strip {
+  position: absolute;
+  top: 0;
+  left: 84%;
+  z-index: 1;
+  width: 28vw;
+  height: 100%;
+  transform: translateX(0%) skew(-45deg);
+  background-color: $fitness-accent;
+  pointer-events: none;
+  will-change: background-position;
+  mix-blend-mode: lighten;
+
+  @include mq-min(568px) {
+    left: 60%;
+  }
+}
+
+.member-profile-intro__line-items {
+  position: absolute;
+  top: 0;
+  left: 55%;
+  z-index: 1;
+  height: 100%;
+  width: 10%;
+  transform: translateX(-100%) skew(-45deg);
+  border-left: 1px solid rgba($white-color, 0.6);
+  border-right: 1px solid rgba($white-color, 0.4);
+  pointer-events: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30%;
+    width: 1px;
+    border-left: 2px solid rgba($white-color, 0.8);
+  }
+}
+
+.member-profile-intro__imagebox {
+
+}
+
+.member-profile-intro__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-profile-intro__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 1;
+  color: $fitness-accent;
+  text-transform: uppercase;
+
+  @include mq-max(567px) {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  @include mq-min(667px) {
+    font-size: 60px;
+    max-width: 500px;
+  }
+
+  @include mq-min(1024px) {
+    margin-left: 70px;
+    font-size: 108px;
+  }
+
+  @media (min-height: 960px) {
+    margin-bottom: 3rem;
+  }
+}
+
+.member-profile-intro__to-vote-wrapper {
+  @include mq-max(567px) {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  @include mq-min(568px) {
+    margin-left: 30px;
+  }
+
+  @include mq-min(1024px) {
+    margin-left: 70px;
+  }
+}
+
+.member-profile-intro__to-vote {
+  position: relative;
+  outline: none;
+
+  @include mq-max(567px) {
+    transform: scale(0.8);
+    font-size: 24px;
+  }
+}
+
+.member-profile-intro__to-vote-score {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 10px;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.45;
+  color: #ffd568;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../../images/trophy.svg") no-repeat center;
+    background-size: contain;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    background-color: $black-color;
+    border-radius: 50%;
+  }
+}
+
+.member-profile-intro__to-vote-text {
+  padding-left: 55px;
+}
+
+.member-profile__social {
+  position: relative;
+
+  @include mq-min(568px) {
+    max-width: 150px;
+    position: absolute;
+    right: $grid-gutter-width / 2;
+    bottom: 75px;
+  }
+
+  @include mq-min(736px) {
+    right: $grid-gutter-width;
+    bottom: 0;
+  }
+}

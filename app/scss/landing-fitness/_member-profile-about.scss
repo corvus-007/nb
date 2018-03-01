@@ -1,0 +1,44 @@
+.member-profile-about {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  color: #fff;
+  background: #151b23 url("../../images/fitnes2018/bg_profile_about.jpg") no-repeat center;
+  background-size: cover;
+
+  @include mq-min(768px) {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+}
+
+.member-profile-about__wrapper {
+  @include make-container();
+
+  position: relative;
+}
+
+.member-profile-about__title {
+  margin: 0;
+  margin-bottom: 50px;
+  font-weight: 900;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include mq-min(568px) {
+    font-size: 30px;
+  }
+
+  @include mq-min(768px) {
+    font-size: 37px;
+  }
+}
+
+.member-profile-about__text {
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 21px;
+  font-family: $secondary-font;
+  text-align: center;
+}

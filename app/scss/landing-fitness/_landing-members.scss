@@ -1,0 +1,89 @@
+.landing-members {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  color: #ffffff;
+  background: #333940 url("../../images/fitnes2018/bg_members.jpg") no-repeat center;
+  background-size: cover;
+
+  @include mq-min(768px) {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+}
+
+.landing-members__wrapper {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.landing-members__title {
+  margin: 0;
+  margin-bottom: 50px;
+  font-weight: 900;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include mq-min(568px) {
+    font-size: 30px;
+  }
+
+  @include mq-min(768px) {
+    font-size: 37px;
+  }
+}
+
+.landing-members__list {
+  @include clear-list();
+
+  @include mq-min(1024px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.landing-members__item {
+  @include mq-min(1024px) {
+    max-width: none;
+    width: calc((100% - 20px * 6) / 7);
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    &:nth-child(7n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.landing-members__footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.landing-members__file {
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 1.1;
+  color: #ffd15c;
+  transition: color $duration;
+
+  &:hover,
+  &:focus {
+    color: lighten(#ffd15c, 10%);
+  }
+}
+
+.landing-members__file-icon {
+  margin-right: 15px;
+  fill: currentColor;
+}
+
+.landing-members__file-caption {
+  text-align: left;
+  max-width: 180px;
+  text-decoration: underline;
+}

@@ -1,0 +1,37 @@
+.member-profile-social {
+  @include clear-list();
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.member-profile-social__item {
+  margin-right: 25px;
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+.member-profile-social__link {
+  display: block;
+  padding: 14px;
+  color: $base-color;
+  background-color: $fitness-accent-2;
+  border-radius: 50%;
+  transition: $duration;
+
+  &:hover,
+  &:focus {
+    color: $white-color;
+    background-color: $fitness-accent;
+  }
+}
+
+.member-profile-social__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
