@@ -7,9 +7,6 @@
   display: block;
 }
 
-.landing-member-card__photobox {
-
-}
 
 .landing-member-card__photo {
   border-radius: 50%;
@@ -71,7 +68,7 @@
 .landing-member-card__score {
   position: absolute;
   top: 0;
-  left: 10%;
+  right: calc(50% + 128px / 3);
   z-index: 1;
   font-weight: 700;
   font-size: 12px;
