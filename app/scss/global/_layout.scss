@@ -7,6 +7,10 @@
 .main {
   flex-grow: 1;
   margin-top: rem($grid-gutter-width + 17);
+
+  &--not-top-gap {
+    margin-top: 0;
+  }
 }
 
 .main-grid {
