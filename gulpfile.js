@@ -17,7 +17,7 @@ var del = require('del');
 
 gulp.task('style', function() {
   return (gulp
-      .src(['app/scss/style.scss', '!app/scss/landing-fitness/'])
+      .src(['app/scss/style.scss'])
       .pipe(
         plumber({
           errorHandler: function(err) {
@@ -75,6 +75,37 @@ gulp.task('landing-fitness-style', function() {
       ])
     )
     .pipe(gulp.dest('build/css/fitnes2018/'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('msbryansk2018-style', function() {
+  return gulp
+    .src('app/scss/msbryansk2018-style.scss')
+    .pipe(
+      plumber({
+        errorHandler: function(err) {
+          console.log(err);
+        }
+      })
+    )
+    .pipe(
+      sass
+        .sync({
+          outputStyle: 'expanded'
+        })
+        .on('error', sass.logError)
+    )
+    .pipe(
+      postcss([
+        autoprefixer({
+          browsers: ['last 2 version']
+        }),
+        mqpacker({
+          sort: true
+        })
+      ])
+    )
+    .pipe(gulp.dest('build/css/msbryansk2018/'))
     .pipe(browserSync.stream());
 });
 
@@ -179,6 +210,7 @@ gulp.task('build', function(fn) {
     'copy',
     'style',
     'landing-fitness-style',
+    'msbryansk2018-style',
     'plugins-js',
     'modules-js',
     'copy-script',
@@ -202,6 +234,11 @@ gulp.task('serve', function() {
   gulp.watch('app/scss/landing-fitness/**/*.scss', function() {
     setTimeout(function() {
       gulp.start('landing-fitness-style');
+    }, 500);
+  });
+  gulp.watch('app/scss/msbryansk2018/**/*.scss', function() {
+    setTimeout(function() {
+      gulp.start('msbryansk2018-style');
     }, 500);
   });
   gulp.watch('app/images/**/*', ['copy-images']);
