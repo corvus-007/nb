@@ -1,0 +1,52 @@
+.msbryansk2018-members {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.msbryansk2018-members__inner {
+  @include make-container();
+}
+
+.msbryansk2018-members__title {
+
+}
+
+.msbryansk2018-members__list {
+  @include clear-list();
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -20px;
+}
+
+.msbryansk2018-members__item {
+  width: 100%;
+  margin-bottom: 20px;
+
+  @include mq-range(568px, 767px) {
+    width: calc((100% - 20px * 1) / 2);
+    margin-right: 20px;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  @include mq-range(768px, 1279px) {
+    width: calc((100% - 20px * 2) / 3);
+    margin-right: 20px;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  @include mq-min(1280px) {
+    width: calc((100% - 20px * 3) / 4);
+    margin-right: 20px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}

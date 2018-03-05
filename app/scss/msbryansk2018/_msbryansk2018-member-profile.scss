@@ -1,0 +1,107 @@
+.msbryansk2018-member-profile {
+  font-family: $secondary-font;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.msbryansk2018-member-profile__inner {
+  display: flex;
+  flex-direction: column;
+
+  @include mq-min(667px) {
+    flex-direction: row;
+  }
+}
+
+.msbryansk2018-member-profile__imagebox-wrapper {
+  width: 100%;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq-min(667px) {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 40%;
+    margin-bottom: 0;
+  }
+}
+
+.msbryansk2018-member-profile__imagebox {
+  @include make-fit-object(447, 670);
+
+  @include mq-min(667px) {
+    flex-grow: 1;
+  }
+}
+
+.msbryansk2018-member-profile__body {
+  padding: 20px;
+
+  @include mq-min(667px) {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+  }
+}
+
+.msbryansk2018-member-profile__name {
+  display: block;
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-size: 24px;
+  font-family: $secondary-font;
+  color: #009688;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include mq-min(667px) {
+    text-align: left;
+    font-size: 30px;
+  }
+}
+
+.msbryansk2018-member-profile__description {
+  @include clear-mr-edges-elem();
+
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.msbryansk2018-member-profile__brief {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.msbryansk2018-member-profile__brief-label {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.15em;
+  line-height: 1;
+  color: #009688;
+
+  @include mq-min(667px) {
+    clear: both;
+    float: left;
+    margin-right: 5px;
+  }
+}
+
+.msbryansk2018-member-profile__brief-value {
+  margin: 0;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include mq-min(667px) {
+    margin-bottom: 10px;
+  }
+}
+
+.msbryansk2018-member-profile__gallery {
+  margin-top: auto;
+}
