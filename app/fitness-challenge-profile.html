@@ -107,19 +107,19 @@
       <div class="member-profile-slider">
         <div class="member-profile-slider__content js-member-profile-slider">
           <div class="member-profile-slider__item">
-            <img class="member-profile-slider__image" src="http://placehold.it/1200x680/6db/fff" alt="">
+            <img class="member-profile-slider__image" src="http://news.nashbryansk.ru/v3/images/fitnes2018/people/3/gallery/1.jpg" alt="">
           </div>
           <div class="member-profile-slider__item">
-            <img class="member-profile-slider__image" src="http://placehold.it/1200x680/6bd/fff" alt="">
+            <img class="member-profile-slider__image" src="http://news.nashbryansk.ru/v3/images/fitnes2018/people/3/gallery/2.jpg" alt="">
           </div>
           <div class="member-profile-slider__item">
-            <img class="member-profile-slider__image" src="http://placehold.it/1200x680/67d/fff" alt="">
+            <img class="member-profile-slider__image" src="http://news.nashbryansk.ru/v3/images/fitnes2018/people/3/gallery/3.jpg" alt="">
           </div>
           <div class="member-profile-slider__item">
-            <img class="member-profile-slider__image" src="http://placehold.it/1200x680/0de/fff" alt="">
+            <img class="member-profile-slider__image" src="http://news.nashbryansk.ru/v3/images/fitnes2018/people/3/gallery/4.jpg" alt="">
           </div>
           <div class="member-profile-slider__item">
-            <img class="member-profile-slider__image" src="http://placehold.it/1200x680/d5e/fff" alt="">
+            <img class="member-profile-slider__image" src="http://news.nashbryansk.ru/v3/images/fitnes2018/people/3/gallery/5.jpg" alt="">
           </div>
         </div>
         <div class="container member-profile-slider__arrows-holder"></div>
@@ -370,7 +370,6 @@
   if (memberProfileChartCtx) {
     Chart.defaults.global.defaultFontFamily = 'Akrobat';
     Chart.defaults.global.defaultFontSize = 18;
-    Chart.defaults.global.defaultFontColor = '#fff';
 
     var memberProfileChart = new Chart(memberProfileChartCtx, {
       type: 'line',
@@ -418,10 +417,6 @@
         scales: {
           yAxes: [
             {
-              gridLines: {
-                color: 'rgba(255, 255, 255, 0.3)',
-                zeroLineColor: 'rgba(255, 255, 255, 0.5)'
-              },
               display: true,
               stacked: true,
               ticks: {
@@ -435,10 +430,6 @@
           ],
           xAxes: [
             {
-              gridLines: {
-                color: 'rgba(255, 255, 255, 0.3)',
-                zeroLineColor: 'rgba(255, 255, 255, 0.7)'
-              },
               display: true,
               ticks: {
                 fontSize: 16
@@ -453,9 +444,7 @@
         tooltips: {
           mode: 'index',
           intersect: false,
-          backgroundColor: 'rgba(0, 0, 0, 0.35)',
-          cornerRadius: 0,
-          caretSize: 0
+          backgroundColor: 'rgba(0, 0, 0, 0.7)'
         }
       }
     });
