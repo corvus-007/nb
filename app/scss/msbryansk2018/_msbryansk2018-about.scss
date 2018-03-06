@@ -1,0 +1,76 @@
+.msbryansk2018-about {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  color: $white-color;
+  background: #0c151e url("../../images/msbryansk2018/bg_about.jpg") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+
+  @media (min-height: 920px) {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+}
+
+.msbryansk2018-about__wrapper {
+  @include make-slim-container();
+
+  position: relative;
+}
+
+.msbryansk2018-about__title {
+  margin: 0;
+  margin-bottom: 50px;
+  font-weight: 900;
+  font-size: 37px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.msbryansk2018-about__text {
+  font-weight: 400;
+  font-size: 21px;
+  font-family: $secondary-font;
+  text-align: center;
+
+  & > :not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.msbryansk2018-about__footer {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.msbryansk2018-about__file {
+  display: inline-flex;
+  align-items: center;
+  font-size: 21px;
+  line-height: 1.1;
+  font-family: $secondary-font;
+  color: #ffd15c;
+  transition: color $duration;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: lighten(#ffd15c, 10%);
+  }
+}
+
+.msbryansk2018-about__file-icon {
+  margin-right: 15px;
+  fill: currentColor;
+}
+
+.msbryansk2018-about__file-caption {
+  text-align: left;
+  max-width: 180px;
+}
