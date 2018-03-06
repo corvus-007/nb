@@ -223,7 +223,12 @@ gulp.task('build', function(fn) {
 
 gulp.task('serve', function() {
   browserSync.init({
-    server: './build'
+    server: './build',
+    notify: false,
+    open: true,
+    cors: true,
+    ui: false,
+    port: 3002
   });
 
   gulp.watch('app/scss/**/*.scss', function() {
