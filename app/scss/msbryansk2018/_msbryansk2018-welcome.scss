@@ -1,0 +1,80 @@
+.msbryansk2018-welcome {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: $secondary-color;
+  background: #0d161d url("https://images.unsplash.com/photo-1483884105135-c06ea81a7a80?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f66122e955b48e66aeaea36851ad7aff&auto=format&fit=crop&w=1950&q=80") no-repeat right;
+  background-size: cover;
+  overflow: hidden;
+
+  @include mq-max(567px) {
+    min-height: 70vh;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  @media (min-height: 800px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media (min-height: 910px) {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+}
+
+.msbryansk2018-welcome__wrapper {
+  @include make-container();
+
+  @include mq-min(768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.msbryansk2018-welcome__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1;
+  color: $fitness-accent;
+  text-transform: uppercase;
+
+  @include mq-max(567px) {
+    margin-bottom: 2.5rem;
+  }
+
+  @include mq-min(667px) {
+    font-size: 50px;
+    // max-width: 600px;
+  }
+
+  @include mq-min(768px) {
+    margin-left: 60px;
+    margin-right: 50px;
+    font-size: 108px;
+  }
+
+  @media (min-height: 960px) {
+    // margin-bottom: 3rem;
+  }
+}
+
+.msbryansk2018-welcome__logo {
+  flex-shrink: 0;
+}
+
+.msbryansk2018-welcome__logo-image {
+  border-radius: 50%;
+}
+
+.msbryansk2018-welcome__button {
+  @include mq-min(1024px) {
+    margin-left: 70px;
+  }
+}
