@@ -1,4 +1,11 @@
-$(function() {
+$(function () {
+  'use strict';
+
+  $.fancybox.defaults.animationEffect = 'zoom-in-out';
+  $.fancybox.defaults.gutter = 0;
+  $.fancybox.defaults.transitionEffect = 'zoom-in-out';
+  $.fancybox.defaults.transitionDuration = 500;
+
   var $membersList = $('.msbryansk2018-members__list');
   var partnersSlider = document.querySelector('.landing-partners-slider');
 
@@ -34,25 +41,17 @@ $(function() {
     var cycleTimeEnd;
     var CYCLE_DELAY = 2000;
 
-    $membersList.on(
-      'mouseenter',
-      '.msbryansk2018-member-card__slides',
-      function(event) {
-        event.preventDefault();
-        console.log('навели');
-        cycleMemberPhotos(this);
-      }
-    );
+    $membersList.on('mouseenter', '.msbryansk2018-member-card__slides', function (event) {
+      event.preventDefault();
+      console.log('навели');
+      cycleMemberPhotos(this);
+    });
 
-    $membersList.on(
-      'mouseleave',
-      '.msbryansk2018-member-card__slides',
-      function(event) {
-        event.preventDefault();
-        console.log('убрали курсор');
-        clearInterval(cycleTimeEnd);
-      }
-    );
+    $membersList.on('mouseleave', '.msbryansk2018-member-card__slides', function (event) {
+      event.preventDefault();
+      console.log('убрали курсор');
+      clearInterval(cycleTimeEnd);
+    });
   }
 
   if (partnersSlider) {
@@ -65,8 +64,7 @@ $(function() {
       centerPadding: '70px',
       slidesToShow: 1,
       variableWidth: true,
-      responsive: [
-        {
+      responsive: [{
           breakpoint: 767,
           settings: 'unslick'
         },
@@ -83,5 +81,4 @@ $(function() {
       ]
     });
   }
-
 });
