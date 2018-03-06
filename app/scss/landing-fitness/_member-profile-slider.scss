@@ -1,5 +1,4 @@
 .member-profile-slider {
-  display: none;
   position: relative;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -122,10 +121,7 @@
     padding-left: 25px;
     padding-right: 25px;
     transition: transform $duration * 3;
-
-    .slick-active & {
-      transform: scale3d(0.8, 0.8, 1);
-    }
+    transform: scale3d(0.8, 0.8, 1);
 
     .slick-center & {
       transform: scale3d(1, 1, 1);
@@ -134,17 +130,29 @@
 }
 
 .member-profile-slider__image {
-  margin-left: auto;
-  margin-right: auto;
   width: 100%;
   max-width: 90vw;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
 
   @include mq-min(1024px) {
     max-width: 60vw;
+    height: 600px;
   }
 
   @include mq-min(1280px) {
     max-width: 52vw;
+    height: 540px;
+  }
+
+  @include mq-min(1440px) {
+    height: 620px;
+  }
+
+  @include mq-min(1920px) {
+    height: 720px;
   }
 }
 
