@@ -366,10 +366,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
   <script>
     var memberProfileChartCtx = document.getElementById('member-profile-chart');
+    var colorsChart = ['rgb(54, 162, 235)', 'rgb(255, 99, 132)', '#E040FB', '#00E676', '#FF6D00', '#651FFF', '#ff1744', '#29B6F6', '#E91E63', '#5E35B1']
 
   if (memberProfileChartCtx) {
     Chart.defaults.global.defaultFontFamily = 'Akrobat';
     Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.elements.line.fill = false;
+    Chart.defaults.global.elements.line.borderWidth = 6;
+    Chart.defaults.global.elements.point.borderWidth = 8;
 
     var memberProfileChart = new Chart(memberProfileChartCtx, {
       type: 'line',
@@ -378,19 +382,21 @@
         datasets: [
           {
             label: 'Грудь',
-            fill: false,
-            backgroundColor: 'rgb(54, 162, 235)',
-            borderColor: 'rgb(54, 162, 235)',
-            borderWidth: 8,
+            backgroundColor: colorsChart[0],
+            borderColor: colorsChart[0],
             data: [80, 86, 89]
           },
           {
             label: 'Талия',
-            fill: false,
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            borderWidth: 8,
+            backgroundColor: colorsChart[1],
+            borderColor: colorsChart[1],
             data: [67, 65, 62]
+          },
+          {
+            label: 'Голень',
+            backgroundColor: colorsChart[2],
+            borderColor: colorsChart[2],
+            data: [20, 21]
           }
         ]
       },
