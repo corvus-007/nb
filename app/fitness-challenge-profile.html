@@ -366,7 +366,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
   <script>
     var memberProfileChartCtx = document.getElementById('member-profile-chart');
-    var colorsChart = ['rgb(54, 162, 235)', 'rgb(255, 99, 132)', '#E040FB', '#00E676', '#FF6D00', '#651FFF', '#ff1744', '#29B6F6', '#E91E63', '#5E35B1']
+    var colorsChart = ['#36a2eb', '#ff6384', '#E040FB', '#00E676', '#FF6D00', '#651FFF', '#ff1744', '#29B6F6', '#E91E63', '#5E35B1']
 
   if (memberProfileChartCtx) {
     Chart.defaults.global.defaultFontFamily = 'Akrobat';
@@ -378,25 +378,37 @@
     var memberProfileChart = new Chart(memberProfileChartCtx, {
       type: 'line',
       data: {
-        labels: ['Март', 'Апрель', 'Май', 'Июнь'],
+        labels: ['1 Марта', '7 Марта'],
         datasets: [
           {
             label: 'Грудь',
             backgroundColor: colorsChart[0],
             borderColor: colorsChart[0],
-            data: [80, 86, 89]
+            data: ['90', '90']
           },
           {
             label: 'Талия',
             backgroundColor: colorsChart[1],
             borderColor: colorsChart[1],
-            data: [67, 65, 62]
+            data: ['72.5', '72.5']
           },
           {
-            label: 'Голень',
+            label: 'Вес',
             backgroundColor: colorsChart[2],
             borderColor: colorsChart[2],
-            data: [20, 21]
+            data: ['65.5', '65.5']
+          },
+          {
+            label: 'Объем руки (Н)',
+            backgroundColor: colorsChart[3],
+            borderColor: colorsChart[3],
+            data: ['28.8', '27.5']
+          },
+          {
+            label: 'Объем руки (Р)',
+            backgroundColor: colorsChart[4],
+            borderColor: colorsChart[4],
+            data: ['26.2', '25.5']
           }
         ]
       },
@@ -424,7 +436,6 @@
           yAxes: [
             {
               display: true,
-              stacked: true,
               ticks: {
                 fontSize: 16
               },
@@ -454,8 +465,6 @@
         }
       }
     });
-
-    memberProfileChart.generateLegend();
   }
   </script>
   <script src="js/landing-script.js"></script>
