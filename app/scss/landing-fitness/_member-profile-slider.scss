@@ -170,3 +170,12 @@
     width: auto;
   }
 }
+
+.member-profile-slider__counter {
+  @include make-container();
+
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  pointer-events: none;
+}
