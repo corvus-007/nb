@@ -85,9 +85,9 @@
   }
 
   &:disabled {
-    filter: grayscale(100%);
-    cursor: default;
     letter-spacing: 0;
+    color: lighten($base-color, 50%);
+    cursor: default;
   }
 
   @include mq-range(768px, 950px) {
