@@ -55,13 +55,14 @@
   margin-top: auto;
   color: $base-color;
   font-size: 20px;
+  white-space: nowrap;
   background-color: #eef1f0;
   border: none;
   border-radius: 40px 0 0 40px;
   outline: none;
 
-  &:hover,
-  &:focus {
+  &:not(:disabled):hover,
+  &:not(:disabled):focus {
     color: $fitness-accent;
 
     .msbryansk2018-member-card__to-vote-score {
@@ -72,7 +73,7 @@
     }
   }
 
-  &:active {
+  &:not(:disabled):active {
     .msbryansk2018-member-card__to-vote-score {
       color: #fff;
 
@@ -81,6 +82,12 @@
         background-color: $fitness-accent;
       }
     }
+  }
+
+  &:disabled {
+    filter: grayscale(100%);
+    cursor: default;
+    letter-spacing: 0;
   }
 
   @include mq-range(768px, 950px) {
@@ -118,7 +125,12 @@
     box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     transition: $duration;
+
+    .msbryansk2018-member-card__to-vote:disabled & {
+      background-color: #eef1f0;
+    }
   }
+
 
   @include mq-range(768px, 950px) {
     &::after {
