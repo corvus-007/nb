@@ -1,6 +1,7 @@
 build/
 other/
 node_modules/
+back/
 .DS_Store
 Thumbs.db
 .idea
