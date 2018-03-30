@@ -21,7 +21,7 @@
   opacity: 0;
   transition: $duration * 5;
 
-  &--active {
+  &.is-slide-active {
     opacity: 1;
   }
 }

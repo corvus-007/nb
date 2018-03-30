@@ -36,6 +36,15 @@
   }
 }
 
+.msbryansk2018-member-profile__image {
+  opacity: 0;
+  transition: $duration * 5;
+
+  &.is-slide-active {
+    opacity: 1;
+  }
+}
+
 .msbryansk2018-member-profile__body {
   padding: 20px;
 

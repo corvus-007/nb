@@ -10,11 +10,9 @@ $(function () {
   var partnersSlider = document.querySelector('.landing-partners-slider');
 
   function cycleMemberPhotos(memberSlides) {
-    var $slides = $(memberSlides).find(
-      '.msbryansk2018-member-card__slides-item'
-    );
+    var $slides = $(memberSlides).find('img');
     var $currentSlide = $slides.filter(
-      '.msbryansk2018-member-card__slides-item--active'
+      '.is-slide-active'
     );
     var slidesCount = $slides.length;
     var currentSlideIndex = $currentSlide.index();
@@ -28,9 +26,9 @@ $(function () {
       }
 
       $slides
-        .removeClass('msbryansk2018-member-card__slides-item--active')
+        .removeClass('is-slide-active')
         .eq(++currentSlideIndex)
-        .addClass('msbryansk2018-member-card__slides-item--active');
+        .addClass('is-slide-active');
     }
 
     changeMemberSlide();
@@ -43,14 +41,20 @@ $(function () {
 
     $membersList.on('mouseenter', '.msbryansk2018-member-card__slides', function (event) {
       event.preventDefault();
-      console.log('навели');
       cycleMemberPhotos(this);
     });
 
     $membersList.on('mouseleave', '.msbryansk2018-member-card__slides', function (event) {
       event.preventDefault();
-      console.log('убрали курсор');
       clearInterval(cycleTimeEnd);
+    });
+
+    $(".msbryansk2018-member-card__imagebox[data-fancybox]").fancybox({
+      afterLoad: function (instance, slide) {
+        setTimeout(function () {
+          cycleMemberPhotos(slide.$content.find('.msbryansk2018-member-profile__imagebox').get(0));
+        }, 1000);
+      }
     });
   }
 
