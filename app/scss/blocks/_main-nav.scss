@@ -171,3 +171,26 @@
     background-position: 100% 50%;
   }
 }
+
+.main-nav__item--msbryansk2018 {
+  .main-nav__link-text {
+    position: relative;
+    padding: 3px;
+    color: $white-color;
+    background-color: $fitness-accent;
+    background-color: #009688;
+    border: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: calc(-2.5 * 3px);
+      top: calc(-1 * 3px);
+      right: calc(-2.5 * 3px);
+      bottom: calc(-1 * 3px);
+      background-color: #009688;
+      border-radius: 2px;
+    }
+  }
+}
