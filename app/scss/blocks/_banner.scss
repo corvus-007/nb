@@ -40,6 +40,12 @@
   display: inline-block;
 }
 
+.main-grid__column-main img.b_data {
+  object-fit: contain;
+  height: auto;
+  max-height: 300px;
+}
+
 .b_data_1 {
   height: 120px;
   width: 100%;
