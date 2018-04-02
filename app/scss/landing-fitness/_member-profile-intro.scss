@@ -134,9 +134,24 @@
   position: relative;
   outline: none;
 
+  &:disabled {
+    letter-spacing: 0;
+    color: lighten($base-color, 50%);
+    cursor: default;
+    font-size: 24px;
+
+    &::before {
+      content: none;
+    }
+  }
+
   @include mq-max(567px) {
     transform: scale(0.8);
     font-size: 24px;
+
+    &:disabled {
+      font-size: 20px;
+    }
   }
 }
 
@@ -178,6 +193,10 @@
 
 .member-profile-intro__to-vote-text {
   padding-left: 55px;
+
+  .member-profile-intro__to-vote:disabled & {
+    background-color: #eef1f0;
+  }
 }
 
 .member-profile__social {
